@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Select;
+
+
+
 
 class HomeController extends Controller
 {
@@ -23,8 +30,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {  
+        $categories = Category::all();
+        
+
+        $articles = Article::where('published', true)->get();
+        
+        return view('home',compact('articles','categories'));
     }
 
     public function showall()

@@ -1,7 +1,8 @@
  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}" >
-            {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand " href="{{ url('/') }}" >
+            
+            <img src="/img/astra-logo.png"  class="img-fluid" height="100px" width="100px" >
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -25,12 +26,22 @@
 
                  <li class="nav-item">
                     <a class="nav-link" href="">Contatti</a>
-                 </li>
+                </li>
+
+                 <li class="nav-item">
+                     <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                     
+                </li>
+                
             </ul>
+            
 
            
             
-            <ul class="navbar-nav ml-auto">
+            {{-- <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
@@ -63,7 +74,7 @@
                         </div>
                     </li>
                 @endguest
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </nav>

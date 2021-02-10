@@ -3,17 +3,25 @@
 namespace App\Nova;
 
 
+
+
+
+
+
+use App\Nova\Category;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Waynestate\Nova\CKEditor;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Select;
 
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+
 
 class Article extends Resource
 {
@@ -58,14 +66,26 @@ class Article extends Resource
 
             Text::make(__('Titolo'),'title')
                 ->rules('required'),
-
-            Select::make(__('Categoria'),'category')
-                ->options([
-                    'Connettore',
-                    'Antenna',
-                    'Twin'
-                ])
-                ->rules('required'),
+            
+            BelongsTo::make('Categoria', 'category', Category::class),
+                      
+           
+            // Select::make(__('Categoria'),'category')
+            //     ->options([
+            //             'Connettore',
+            //             'Antenna',
+            //             'Twin',
+            //             'Cavo',
+            //             'Telecomando',
+            //             'Amplificatori',
+            //             'Decoder',
+            //             'Prese',
+            //         ])
+            //         ->displayUsingLabels()
+            //         ->rules('required'),
+                    
+           
+                
 
             Image::make(__('Immagine'), 'img')
                 ->disk('public')
@@ -79,7 +99,10 @@ class Article extends Resource
 
             DateTime::make(__('Data'), 'created_at')
                     ->format('DD/MM/YYYY')
-                    ->sortable(),   
+                    ->sortable(),  
+
+            CKEditor::make(_('Propietà'), 'property')
+                    ->hideFromIndex(),        
 
             CKEditor::make(_('Descrizione'), 'description')
                     ->hideFromIndex(),

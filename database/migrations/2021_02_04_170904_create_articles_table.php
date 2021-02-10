@@ -18,8 +18,7 @@ class CreateArticlesTable extends Migration
 
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('category');
-            $table->text('instruction')->nullable();
+            $table->text('property')->nullable();
             $table->string('img')->nullable();
             $table->boolean('published')->default(false);
            

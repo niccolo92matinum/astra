@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/allArticles', [HomeController::class, 'showall'])->name('allArticles');
+Route::get('/zzzArticles', [HomeController::class, 'showall'])->name('allArticles');
 Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
 Route::get('/mailpage',[HomeController::class, 'mailshow'])->name('mailpage');
+Route::get('/articlesCategory/{category}',[CategoryController::class, 'show'])->name('show.articlesCategory');
 
 Auth::routes();
 

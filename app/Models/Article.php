@@ -2,7 +2,12 @@
 
 namespace App\Models;
 
+
+
+use App\Models\Category;
 use Illuminate\Support\Str;
+use Spatie\Image\Manipulations;
+
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -44,11 +49,16 @@ public function registerMediaConversions(Media $media = null): void
 {
     $this->addMediaConversion('thumb')
         //   
-          ->crop(Manipulation::CROP_CENTER, 720, 405)
+          ->crop(Manipulations::CROP_CENTER, 720, 405)
         //   ->height(232)
           ->sharpen(8)
           ->performOncollections('gallery');
 }
 
+
+public function category()
+{
+   return $this->BelongsTo(Category::class);
+}
 
 }
