@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10005,67 +10004,265 @@ h3 {
     border-color: #dee2e6;
   }
 }
+:root {
+  --main-color:#4e5865;
+  --icon-color: white;
+  --icon-second-color:#FDBD68;
+  --background-color:#EAEDED;
+}
+
 * {
-  font-family: "ABeeZee", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.container-fluid.main, .main.container-sm, .main.container-md, .main.container-lg, .main.container-xl {
-  position: relative;
-  /* To make the navbar positions relative to this container */
-  padding: 0;
+body {
+  background-color: var(--icon-color);
 }
 
-.navbar-default {
-  background-image: none;
-  background-color: transparent;
-  /* Make the menu become transparent */
-  border-radius: 0px;
-  border: 0;
-  box-shadow: none;
-  padding: 10px;
-  position: absolute;
-  /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
+.navbar {
+  background-color: var(--main-color) !important;
+  height: 100px;
 }
 
-.navbar-default .navbar-brand {
-  font-family: Verdana;
-  color: #ffffff;
+.nav-link {
+  font-size: 25px;
+  color: var(--icon-color) !important;
+}
+
+.nav-link:hover {
+  color: var(--icon-second-color) !important;
+}
+
+.sezioni-nav {
+  color: var(--icon-color) !important;
+}
+
+.sezioni-nav:hover {
+  color: var(--icon-second-color) !important;
+}
+
+.button-nav {
+  background-color: var(--icon-second-color);
+}
+
+.navbar-toggler {
+  background-color: var(--icon-second-color);
+}
+
+.navbar-collapse {
+  background-color: var(--main-color) !important;
+}
+
+.search-nav {
+  width: 150px;
+  height: 30px;
+}
+
+@media (max-width: 1060px) {
+  .general-search {
+    display: none;
+  }
+}
+/* default list style css */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* main footer css */
+#primary-footer {
+  background-color: var(--main-color);
+}
+
+.footer-widget-area {
+  padding: 50px 0;
+}
+
+/* main footer inner css */
+.footer-widget-area p {
   font-size: 20px;
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
+.footer-widget-area li {
+  margin-top: 10px;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+.footer-widget-area li a {
+  font-size: 20px;
+  color: var(--icon-second-color);
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
+.footer-widget-area li a:hover {
+  text-decoration: none;
+  color: #00d07e;
 }
 
-.navbar-default .navbar-toggle {
-  border-color: transparent;
+.footer-widget-heading h4 {
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.navbar-default .navbar-toggle:hover {
-  background-color: transparent;
+.linkediting .fa {
+  color: white;
 }
 
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
+.footer-social-icon .social-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+.fotTitile {
+  color: white;
+}
+
+.fotInfo {
+  color: var(--icon-second-color);
+}
+
+.circle-icon {
+  background: white;
+  color: var(--icon-second-color);
+  padding: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
+
+/* footer credit css */
+/*media quries*/
+@media (max-width: 991.98px) {
+  .footer-social-icon span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767.98px) {
+  .copyright-text p {
+    text-align: center;
+  }
+
+  .footer-menus ul {
+    text-align: center;
+  }
+
+  .footer-social-icon span {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575.98px) {
+  .footer-widget-area {
+    padding: 0 20px;
+  }
+
+  .copyright-text p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .footer-menus ul {
+    text-align: center;
+  }
+
+  .footer-menus ul li a {
+    font-size: 16px;
+  }
+}
+.card-prod {
+  position: relative;
+  margin: 10vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  background: var(--icon-color);
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card-prod:hover {
+  transform: scale(0.9);
+}
+
+.card-prod:hover .con-text button {
+  margin-bottom: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.card-prod img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+.card-prod .con-text {
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 30px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.card-prod .con-text button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.8rem;
+  opacity: 0;
+  margin-bottom: -150px;
+  transition: all 0.5s ease;
+}
+
+.card-prod .con-text button {
+  padding: 7px 17px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: var(--icon-color);
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-family: poppins;
+  font-size: 0.75rem;
+  outline: none;
+}
+
+.card-prod .con-text button:hover {
+  background: var(--icon-second-color);
+  color: white;
+}
+
+.link-card {
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-prod {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .card-prod {
+    width: 180px;
+    height: 180px;
+  }
 }

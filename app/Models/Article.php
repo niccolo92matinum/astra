@@ -4,21 +4,44 @@ namespace App\Models;
 
 
 
+use App\Models\Article;
 use App\Models\Category;
-use Illuminate\Support\Str;
-use Spatie\Image\Manipulations;
+use App\Models\Subcategory;
 
+use Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+
+
 class Article extends Model implements HasMedia
 {
-    use HasFactory , InteractsWithMedia;
+    use HasFactory , InteractsWithMedia, Searchable;
 
     protected $guarded = [];
+
+    public function toSearchableArray()
+    { 
+// non so perchè questa riga non mi crea problemi con scout:import
+        $article = $this->get()->pluck('title')->join(',');
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description'=> $this->description,
+        ];
+        return $array;
+    
+}
+
+
+
 
     public function url()
     {
@@ -59,6 +82,11 @@ public function registerMediaConversions(Media $media = null): void
 public function category()
 {
    return $this->BelongsTo(Category::class);
+}
+
+public function subcategory()
+{
+   return $this->BelongsTo(Subcategory::class);
 }
 
 }

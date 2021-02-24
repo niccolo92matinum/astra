@@ -9,12 +9,13 @@ namespace App\Nova;
 
 
 use App\Nova\Category;
+use App\Nova\Subcategory;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Waynestate\Nova\CKEditor;
-use Laravel\Nova\Fields\Image;
 
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
@@ -68,6 +69,8 @@ class Article extends Resource
                 ->rules('required'),
             
             BelongsTo::make('Categoria', 'category', Category::class),
+
+            BelongsTo::make('Subategoria', 'subcategory', Subcategory::class),
                       
            
             // Select::make(__('Categoria'),'category')

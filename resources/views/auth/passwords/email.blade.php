@@ -1,4 +1,4 @@
-<x-layouts.app>
+
 
 
 <div class="container">
@@ -45,4 +45,3 @@
     </div>
 </div>
 
-</x-layouts.app>

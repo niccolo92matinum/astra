@@ -3,7 +3,7 @@ title="Blog"
 description="Benvenuti nel blog del sito"
 >
 @push('style')
-    <style></style>
+<style></style>
 @endpush
 
 <div class="container">
@@ -14,22 +14,30 @@ description="Benvenuti nel blog del sito"
     </header>
     
     <section class="row py-5">
-
-        @foreach ($articles as $article)
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <h3>{{$article->title}}</h3>
-            <p>{{$article->getPreview()}}</p>
-            <a href="{{$article->url()}}">Leggi</a>
-        </div>
+        
+            @foreach ($artSubs as $artSub)
+            <div class="col-12 col-md-3  ">
+                <div class="card-prod">
+                    
+                    <img src="{{Storage::url($artSub->img)}}" >
+                    <div class="con-text">
+                        <h2>{{$artSub->title}}</h2>
+                        <a class="link-card" href="{{route('show', $artSub)}}"><button>VAI</button></a>
+                       
+                    </div>
+                </div>
+                
+            </div>
             
-        @endforeach
-
-    </section>
-</div>
-
-@push('scripts')
+            
+            @endforeach
+            
+        </section>
+    </div>
+    
+    @push('scripts')
     <style>
-
+        
     </style>
-@endpush
+    @endpush
 </x-layouts.app>

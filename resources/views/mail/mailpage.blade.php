@@ -1,10 +1,14 @@
 <x-layouts.app>
 
 
-    <div class="container my-5 mx-5">
-        <div class="row">
+    <div class="container ">
+        <div class="row ">
+
+          <div class="col-12 col-md-6 py-5 px-3">
+            <img class="sfondo img-fluid" src="img/sendemail.png"  >
+          </div>
     
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 py-5 px-5">
     
                 <h2 class="my-5 mx-5">Mail</h2>
     
@@ -42,11 +46,7 @@
     
             
     
-            <div class="col-12 col-md-6">
-    
-              
-                
-            </div>
+            
     
             
             

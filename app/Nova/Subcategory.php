@@ -4,20 +4,18 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Category extends Resource
+class Subcategory extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Category::class;
+    public static $model = \App\Models\Subcategory::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -49,16 +47,10 @@ class Category extends Resource
             Text::make(__('Nome'),'name')
             ->sortable()
             ->rules('required', 'max:255'),
-
-            Textarea::make(__('Sentence'),'sentence')
-            ->sortable()
-            ->rules('required'),
-
-         
             
             Image::make(__('Immagine'), 'img')
                 ->disk('public')
-                ->path('/categorie'),
+                ->path('/subcategorie'),
         ];
     }
 
