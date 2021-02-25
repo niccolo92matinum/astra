@@ -33,9 +33,7 @@ class HomeController extends Controller
     public function index()
     {  
         $categories = Category::all();
-    //    $subcategories = Subcategory::all();
-
-        // $articles = Article::where('published', true)->get();
+    
      
         
         return view('home',compact('categories'));
@@ -45,6 +43,18 @@ class HomeController extends Controller
     public function showsubcategory($category)
     {   
         $articles = Article::where('category_id', $category )->get(); 
+
+       
+        $nameCategories = Category::where('id', $category)->get();
+
+        $array_vuoto1 = array();
+        foreach ($nameCategories as  $nameCategory) {
+            $name = $nameCategory->name;
+             
+            $array_vuoto1[]= $name;
+        } 
+       
+
 
        $array_vuoto = array();
         foreach ($articles as  $article) {
@@ -56,14 +66,8 @@ class HomeController extends Controller
             } 
           
              $subcats = array_unique($array_vuoto);
-            
-          
-           
-    //      $subcategories = Subcategory::where('id', $x)->get();
 
-    //   dd($subcategories);
-
-            return view('subCategory', compact('subcats'));
+            return view('subCategory', compact('subcats','name'));
             
         }
 

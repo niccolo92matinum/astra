@@ -1,6 +1,7 @@
 
- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    <div class="container-fluid">
+ 
+ <nav class="navbar navbar-expand-md navbar-light bg-white align-items-center shadow-sm fixed-top pippo">
+    <div class="container-fluid " >
         <a class="navbar-brand " href="{{ url('/') }}" >
             
             <img   src="/img/astra-logo.png"  class="img-fluid pl-3 " height="200px" width="200px" >
@@ -48,6 +49,9 @@
 </nav>
 
  
+@push('scripts')
+
+
 
 
  

@@ -13,7 +13,7 @@
         <h1>pipppoooo</h1>
         <div class="row">
             <div class="col-12 pt-5 pb-5">
-                <div class="text-center nome-categoria">
+                <div class="text-center ">
                     
                     <h1>{{$categoryPages->name}}</h1>
                     <div class="container">
