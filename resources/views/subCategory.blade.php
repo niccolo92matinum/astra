@@ -6,49 +6,26 @@ description="Benvenuti nel blog del sito"
 @push('styles')
 <style>
     
-    .second-nav-main{
-        margin-top: 95px;
-        box-shadow: 5px 5px 5px var(--icon-second-color);
-    }
-    
-    
-    .second-nav{
-        background-color: var(--icon-second-color);
-        height: 5px; 
-    }
-    
-    .second-nav-word a{
-        color: white;
-        font-size: 20px;
-        text-decoration:none!important;
-    }
-    
-    .second-nav-word a:hover{
-        color:var(--main-color);
-    }
-    
-    .container-sub{
-        margin-top: 10%;
-    }
-    .icona{
-        color:var(--icon-second-color);
-    }
-    
+   
 </style>
 @endpush
 <head>
-    <div id="second-navbar" class="container-fluid second-nav-main fixed-top">
+    <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
+               
+                    <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> {{$name}} </p>
+                    <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p>
+               
+               
                 
-                <h5 class="second-nav-word"> <a href="{{route('home')}}">Home /</a> {{$name}} </h5>
             </div>
         </div>
     </div>
 </head>
 <body>
     
-    <div class="container-fluid  container-sub  container2">
+    <div class="container-fluid  container-sub  ">
         <div class="row">
             <div class="col-12 pt-5">
                 <div class="text-center ">
@@ -57,10 +34,10 @@ description="Benvenuti nel blog del sito"
             </div>
         </div>
         <div class="text-center icona">
-            <i class="fas fa-search-plus fa-5x"></i>
+            <i class="fas fa-info fa-5x"></i>
         </div>
         
-        <div class="row card-home px-5 py-5">
+        <div class="row card-home px-5 ">
             
             @foreach ($subcats as $subcat )
             

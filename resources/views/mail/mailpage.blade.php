@@ -14,30 +14,30 @@
     
     
               
-                <form  method="POST" action="">
+                <form  method="POST" action="{{route('email.send')}}" data-toggle="validator">
                     @csrf
                     <div class="form-group">
                       <label for="">Name</label>
-                      <input type="text" class="form-control" name="name" value="{{old('name')}}">
-                      @error('name')
-                         <div class="alert alert-danger">{{ $message }}</div>
-                      @enderror
+                      <input type="text" class="form-control" name="name" >
+                      {{-- @error('name')
+                         <div class="alert alert-danger">{{ $name }}</div>
+                      @enderror --}}
                 
                     </div>
                     <div class="form-group">
                       <label for="">Mail</label>
-                      <input type="email" class="form-control"  name="mail" value="{{old('mail')}}">
-                      @error('mail')
-                           <div class="alert alert-danger">{{ $message }}</div>
-                       @enderror
+                      <input type="email" class="form-control"  name="mail">
+                      {{-- @error('mail')
+                           <div class="alert alert-danger">{{ $email }}</div>
+                       @enderror --}}
     
                     </div>
                     <div class="form-group">
                       <label  for="">Messaggio</label>
-                      <textarea class="form-control" name="message" id="" cols="30" rows="10">{{old('message')}}</textarea>
-                      @error('message')
+                      <textarea class="form-control" name="message" id="" cols="30" rows="10"></textarea>
+                      {{-- @error('message')
                         <div class="alert alert-danger">{{ $message }}</div>
-                      @enderror
+                      @enderror --}}
                     </div>
                     <button type="submit" class="btn btn-primary">Invia Mail</button>
                   </form>

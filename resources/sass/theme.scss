@@ -107,12 +107,12 @@ background-color: var(--main-color);
 
 .footer-widget-area li a{
   font-size: 20px;
-  color: var(--icon-second-color);
+  color: white;
 }
 
 .footer-widget-area li a:hover{
  text-decoration: none;
- color: #00d07e;
+ color: var(--icon-second-color);
 }
 
 .footer-widget-heading h4{
@@ -121,7 +121,7 @@ background-color: var(--main-color);
 }
 
 .linkediting .fa{
-    color: white;
+    color: var(--icon-second-color);
   }
 
 
@@ -132,12 +132,12 @@ background-color: var(--main-color);
 }
 
 .fotTitile{
-color: white;
+color: var(--icon-second-color);
 }
 
 
 .fotInfo{
-  color:var(--icon-second-color);
+  color:white;
 
 }
 .circle-icon {
@@ -151,31 +151,9 @@ color: white;
   text-align: center;
 }
 
-/* footer credit css */
 
-// .copyright-area{
-// background-color: var(--icon-second-color);
-// padding: 20px 0;
-//   }
 
-  // .copyright-text p{
-  //   font-size: 18px;
-  // }
 
-  // .copyright-text a{
-  //   color: #21bf73;
-  //   font-weight: 600;
-  // }
-
-//   .footer-menus li{
-//     display: inline-flex;
-//     margin-left: 20px;
-//   }
-
-//   .footer-menus li a {
-//   font-size: 18px;
-//   color: var(--white);
-// }
 
 
 /*media quries*/
@@ -235,7 +213,7 @@ color: white;
 
 .card-prod {
   position: relative;
-  margin: 10vh auto;
+  margin: 5vh auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,19 +322,11 @@ color: white;
   font-size: 50px;
   font-weight: 700;
   color:var(--icon-second-color);
-  // padding-top: 10px;
-  // padding-bottom: 50px;
-  padding-left: 100px;
+  
+  
 }
 
-.main-scritte2{
-  font-size: 50px;
-  font-weight: 700;
-  color:var(--main-color);
-  // padding-top: 10px;
-  // padding-bottom: 50px;
-  padding-left: 100px;
-}
+
 
 .title-home{
   font-size: 50px;
@@ -365,6 +335,13 @@ color: white;
   padding-top: 80px;
   padding-bottom: 50px;
  
+}
+
+@media screen and (max-width: 500px) {
+ 
+  .title-home{
+    font-size: 30px;
+  }
 }
 
 .lead{
@@ -385,12 +362,61 @@ color: white;
   font-size: 20px;
 }
 
-.container2{
+.back-gray{
     
   background-color: var(--background-color);
- margin-top: -15px;
+
+}
+
+.containerallArticles{
+  background-color: var(--background-color);
+margin-top:150px;
+}
+
+// SECOND-NAV
+
+.second-nav-main{
+  margin-top: 95px;
+  box-shadow: 5px 5px 5px var(--icon-second-color);
 }
 
 
+.second-nav{
+  background-color: var(--icon-second-color);
+  height: 60px; 
+}
 
+.second-nav-word a{
+  color: white;
+  font-size: 20px;
+  text-decoration:none!important;
+  
+}
+
+.second-nav-word a:hover{
+  color:var(--main-color);
+}
+
+.container-sub{
+  margin-top: 8%;
+  background-color: var(--background-color);
+}
+
+
+.icona{
+  color:var(--icon-second-color);
+}
+
+hr{
+   
+  border-style: solid;
+  border-color: var(--background-color);
+  border-width: 10px;
+  padding-bottom: 0%;
+  margin-top: 1px;
+}
+
+.mar-100{
+  margin-top:100px;
+}
 

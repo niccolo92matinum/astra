@@ -59,7 +59,7 @@ description="Benvenuti nella homepage del sito"
       font-size: 20px;
     }
     .display-nic2{
-      font-size: 10px;
+      font-size: 15px;
       margin-top: 30px;
     } 
   }
@@ -148,14 +148,7 @@ description="Benvenuti nella homepage del sito"
 
   
 
-  hr{
-   
-    border-style: solid;
-    border-color: var(--background-color);
-    border-width: 10px;
-    padding-bottom: 0%;
-    margin-top: 1px;
-  }
+  
 
   
 
@@ -180,7 +173,7 @@ description="Benvenuti nella homepage del sito"
 
 
 
-    <header >
+    <header class="mar-100">
   
       <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
         
@@ -591,17 +584,17 @@ description="Benvenuti nella homepage del sito"
 <!-- Page Content -->
 <section class="">
  
-      <h2 class="text-center title-home">TV , Satellite e Terrestre</h2>
+      <h1 class="text-center title-home">TV , Satellite e Terrestre</h1>
       <hr>
     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, totam? Accusamus corrupti eius a ea rem qui voluptas consequatur impedit soluta, commodi maxime sunt eos non animi amet tempora. Cum.<a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
  
 </section>
 <hr>
 
-<div class="container-fluid container2">
+<div class="container-fluid back-gray">
   <div class="row ">
     <div class="col-12 py-5">
-      <h1 class=" main-scritte">Scopri quali prodotti abbiamo</h1>
+      <h1 class=" main-scritte text-center">Scopri quali prodotti abbiamo</h1>
     </div>
   
     <div class="row  card-home ">

@@ -19,7 +19,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav "> 
                 <li class=" sezioni-nav">
-                   <a class="nav-link pr-5" href="">Prodotti</a>
+                   <a class="nav-link pr-5" href="{{route('searchPage')}}">Prodotti</a>
                 </li>
 
                 <li class="sezioni-nav">

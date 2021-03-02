@@ -2,39 +2,105 @@
     
     @push('styles')
     <style>
+
+      
+
+      .card-search{
+          background-color:var(--main-color);
+          font-size: 15px;
+          
+      }
+
+      .btn-search{
+        color: white;
+        font-size: 20px;
+        text-decoration: none!important;
+      }
+
+     .labelSearch{
+       color: white;
+     
+     }
+
+     .inputSearch{
+         padding-left:10px;
+     }
+
+    i.arrow-search {
+  display: inline-block;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px white;
+  padding: 0.3em 0.3em;
+}
+
+
+.h2search:hover i{
+    transform: rotate(90deg);
+        transition:  0.5s;  
+       
         
+        
+}
+
+.h2search:hover button{
+        color: var(--icon-second-color);
+}
+
+.placeholdersearc{
+    background-color: red!important;
+}
+
+label:hover {
+   color: var(--icon-second-color);
+}
+
+.border-radius{
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px;
+  border-bottom-right-radius: 20px; 
+}
+
+
+
+
     </style>
     @endpush
-    
     <head>
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-center">Fai una ricerca su tutti gli annunci</h1>
+        <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
+            <div class="row px-4 py-4 second-nav mt-2">
+                <div class="col-12 ">
+                   
+                        <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> SearchPage </p>
+                        <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p>
+                    
                 </div>
             </div>
         </div>
     </head>
-    
+   
     <body>
-        <div class="container-fluid pt-5 pb-5">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <h1 class="text-center">Filtri</h1>
+    
+        <div class="container-fluid mar-100 back-gray py-5 px-5">
+           
+            <div class="row pt-5  ">
+                <div class="col-12 col-md-4  " >
+
+                <div style="position:sticky; top: 170px; ">
+                    <h1 class="text-center title-home pb-5">Ricerca <i class="fas fa-search"></i> </h1>
                     
                     
-                    <div class="accordion" id="accordionFilter">
-                        <div class="card">
-                            <div class="" id="categoryFilter">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Categoria
+                    <div class="accordion  pt-3" id="accordionFilter">
+                        <div class="card card-search  border-radius">
+                            <div  id="categoryFilter">
+                                <h2 class="mb-0 h2search">
+                                    <button class="btn btn-link btn-block text-left btn-search" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Categoria <i class="fas fa-arrow-right  float-right   arrow-search text-center "></i> 
                                     </button>
                                 </h2>
                             </div>
                             
                             <div id="collapseOne" class="collapse show" aria-labelledby="categoryFilter" data-parent="#accordionFilter">
-                                <div id="categoryFilterWrapper" class=" pl-3">
+                                <div id="categoryFilterWrapper" class=" pt-1 pl-3">
                                     
                                     {{-- options --}}
                                     {{-- qui c'è JavaScript --}}                                   
@@ -44,17 +110,17 @@
                         </div>
                         
                         
-                        <div class="card"> 
+                        <div class="cardn card-search"> 
                             <div class="" id="subcategoryFilter">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        Sottocategoria
+                                <h2 class="mb-0 h2search">
+                                    <button class="btn btn-link btn-block text-left text-left btn-search" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        Sottocategoria<i class="fas fa-arrow-right  float-right  arrow-search text-center "></i> 
                                     </button>
                                 </h2>
                             </div>
                             
                             <div id="collapseTwo" class="collapse " aria-labelledby="subcategoryFilter" data-parent="#accordionFilter">
-                                <div id="subCategoryFilterWrapper" class=" pl-3">
+                                <div id="subCategoryFilterWrapper" class="pt-1 pl-3">
                                     
                                     {{-- options --}}
                                     
@@ -64,11 +130,11 @@
                             </div>
                         </div>
                         {{--Ricerca per nome  --}}
-                        <div class="card"> 
+                        <div class="card card-search"> 
                             <div class="" id="nameFilter">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                        Nome
+                                <h2 class="mb-0 h2search">
+                                    <button class="btn btn-link btn-block text-left  text-left btn-search" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        Nome<i class="fas fa-arrow-right  float-right  arrow-search text-center "></i> 
                                     </button>
                                 </h2>
                             </div>
@@ -78,33 +144,24 @@
                                    
                                         <div class="form-group">
                                             
-                                            <input   id="productTitle" type="text" class="mt-0 bg-secondary w-100" >
+                                            <input   id="productTitle" type="text" placeholder="Search"  class="mt-0 bg-secondary w-100 placeholdersearch" >
                                             
                                         </div>
-                                    
-                               
-                                
                             </div>
                         </div>
-                    </div>
-                    
-                    
-                    
-                    
+                    </div>                    
+                </div>
+
+            </div>
+
+        
+            <div class="col-12 col-md-8 ">
+                <h1 class="text-center   title-home pb-0">Articoli disponibili</h1>
+                
+                <div  id="wrapperProducts" class="row">
+                      
                 </div>
             
-            
-            
-            
-            <div class="col-12 col-md-8">
-                <h1 class="text-center pb-5">Articoli</h1>
-                
-                <div id="wrapperProducts" class="row">
-                    
-                    
-                </div>
-                
-                
             </div>
         </div>
     </div>
@@ -144,8 +201,8 @@
                 div.classList.add('dioPorco')
                 div.innerHTML = 
                 `
-                <input class="form-check-input" type="radio" name="categories" id="${el}" value="option1" checked>
-                <label class="form-check-label"  data-category_id="${el.toLowerCase()}" for="${el}">${el}</label>
+                <input  class="inputSearch  " class="form-check-input" type="radio" name="categories" id="${el}" value="option1" checked>
+                <label  class="labelSearch " class="form-check-label"  data-category_id="${el.toLowerCase()}" for="${el}">${el}</label>
                 
                 `
                 categoryFilterWrapper.appendChild(div)
@@ -155,8 +212,8 @@
             all.classList.add('dioPorco')
             all.innerHTML = 
             `
-            <input class="form-check-input" type="radio" name="categories" id="Tutte" value="option1" checked>
-            <label class="form-check-label"  data-category_id="tutte" for="Tutte">Tutte</label>
+            <input class="inputSearch" class="form-check-input" type="radio" name="categories" id="Tutte" value="option1" checked>
+            <label class="labelSearch" class="form-check-label"  data-category_id="tutte" for="Tutte">Tutte</label>
             
             `
             categoryFilterWrapper.appendChild(all)
@@ -198,8 +255,8 @@
                 div.classList.add('dioPorco')
                 div.innerHTML = 
                 `
-                <input class="form-check-input" type="radio" name="subcategories" id="${el}" value="option2" checked>
-                <label class="form-check-label"  data-subcategory_id="${el.toLowerCase()}" for="${el}">${el}</label>
+                <input   class="inputSearch" class="form-check-input"  type="radio" name="subcategories" id="${el}" value="option2" checked>
+                <label  class="labelSearch" class="form-check-label"  data-subcategory_id="${el.toLowerCase()}" for="${el}">${el}</label>
                 
                 `
                 subCategoryFilterWrapper.appendChild(div)
@@ -239,10 +296,10 @@
             wrapperProducts.innerHTML = " "
             dataInput.forEach(el => {
                 let col = document.createElement('div')
-                col.classList.add('col-12', 'col-md-6', 'col-sm-6','col-lg-4')
+                col.classList.add('col-12', 'col-md-6', 'col-sm-6','col-lg-4','pt-4')
                 col.innerHTML = 
                 `
-                <div class="card-prod">
+                <div class="card-prod ">
                     
                     <img src= "/storage/${el.img}" >
                     <div class="con-text">

@@ -26,15 +26,15 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
  Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
  
  Route::get('/assistence',[HomeController::class, 'assistenza'])->name('assistenza');
- Route::get('/mailpage',[HomeController::class, 'mailshow'])->name('mail.mailpage');
-
+ 
  Route::get('/dataArticles', [CategoryController::class, 'dataArticles'])->name('dataArticles');
 
  Route::get('/searchPage', [CategoryController::class, 'search'])->name('searchPage');
 
  Route::get('/searchForm', [CategoryController::class, 'searchform'])->name('searchForm');
-
-
+// rotte email
+ Route::get('/mailpage',[HomeController::class, 'mailshow'])->name('mail.mailpage');
+ Route::post('/mail/send',[HomeController::class, 'mailsend'])->name('email.send');
 // Route::get('/articlesSubcategory/{subcategory}',[CategoryController::class, 'showSubcategory'])->name('articlesSubcategory');
 
 
