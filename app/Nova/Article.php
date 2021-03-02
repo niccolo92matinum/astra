@@ -11,10 +11,11 @@ namespace App\Nova;
 use App\Nova\Category;
 use App\Nova\Subcategory;
 use Laravel\Nova\Fields\ID;
+use App\Nova\Mastercategory;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Waynestate\Nova\CKEditor;
 
+use Waynestate\Nova\CKEditor;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\Boolean;
@@ -67,11 +68,12 @@ class Article extends Resource
 
             Text::make(__('Titolo'),'title')
                 ->rules('required'),
-            
-            BelongsTo::make('Categoria', 'category', Category::class),
-
-            BelongsTo::make('Subategoria', 'subcategory', Subcategory::class),
-                      
+                
+                BelongsTo::make('Categoria', 'category', Category::class),
+                
+                BelongsTo::make('Subategoria', 'subcategory', Subcategory::class),
+                
+                BelongsTo::make('Mastercategoria', 'mastercategory', Mastercategory::class),
            
             // Select::make(__('Categoria'),'category')
             //     ->options([

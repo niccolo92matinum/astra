@@ -16,12 +16,14 @@ use App\Http\Controllers\CategoryController;
 */
 
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory'])->name('subCategory');
 
  Route::get('/allArticles/{id}', [HomeController::class, 'showall'])->name('allArticles');
+
+
+Route::get('/masterCategory', [HomeController::class, 'showMaster'])->name('masterCategory');
 
  Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
  
@@ -34,23 +36,9 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
  Route::get('/searchForm', [CategoryController::class, 'searchform'])->name('searchForm');
 // rotte email
  Route::get('/mailpage',[HomeController::class, 'mailshow'])->name('mail.mailpage');
+
  Route::post('/mail/send',[HomeController::class, 'mailsend'])->name('email.send');
-// Route::get('/articlesSubcategory/{subcategory}',[CategoryController::class, 'showSubcategory'])->name('articlesSubcategory');
-
-
-
-
-// Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
-// Route::get('/articlesCategory/{category}',[CategoryController::class, 'show'])->name('articlesCategory');
-
-
 
 Auth::routes();
 
 
-
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -22,9 +22,6 @@ class MailContact extends Mailable
     }
 
     
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->from('Astra@Sacco.com')

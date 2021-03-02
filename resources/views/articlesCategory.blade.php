@@ -1,4 +1,4 @@
-<x-layouts.app>
+{{-- <x-layouts.app>
     
     
     @push('styles')
@@ -44,4 +44,4 @@
 
 
 
-</x-layouts.app>
+</x-layouts.app> --}}

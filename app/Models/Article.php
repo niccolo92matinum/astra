@@ -10,12 +10,13 @@ use App\Models\Subcategory;
 
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
+use App\Models\Mastercategory;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+
+
 use Spatie\MediaLibrary\InteractsWithMedia;
-
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -87,6 +88,11 @@ public function category()
 public function subcategory()
 {
    return $this->BelongsTo(Subcategory::class);
+}
+
+public function mastercategory()
+{
+   return $this->BelongsTo(Mastercategory::class);
 }
 
 }

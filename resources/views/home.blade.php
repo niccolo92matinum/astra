@@ -597,10 +597,10 @@ description="Benvenuti nella homepage del sito"
       <h1 class=" main-scritte text-center">Scopri quali prodotti abbiamo</h1>
     </div>
   
-    <div class="row  card-home ">
+    <div class="row  card-home  ">
       @foreach ($categories as $category)
-      <div class="col-12 col-md-3  col-sm-6 " class="mediaCard">
-        <div class="card-prod ">
+      <div class="col-12 col-md-3  col-sm-6 " >
+        <div class="card-prod   ">
           
           <img src="{{Storage::url($category->img)}}" >
           <div class="con-text">

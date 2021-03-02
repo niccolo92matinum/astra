@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Mail\MailContact;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use App\Models\Mastercategory;
 use Laravel\Nova\Fields\Select;
 use Illuminate\Support\Facades\Mail;
 
@@ -32,6 +33,8 @@ class HomeController extends Controller
     *
     * @return \Illuminate\Contracts\Support\Renderable
     */
+
+
     public function index()
     {  
         $categories = Category::all();
@@ -40,8 +43,7 @@ class HomeController extends Controller
         
         return view('home',compact('categories'));
     }
-    
-    
+
     public function showsubcategory($category)
     {   
         $articles = Article::where('category_id', $category )->get(); 
