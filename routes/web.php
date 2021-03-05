@@ -18,12 +18,13 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/masterCategory/{id}', [HomeController::class, 'showMaster'])->name('masterCategory');
+
 Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory'])->name('subCategory');
+
 
  Route::get('/allArticles/{id}', [HomeController::class, 'showall'])->name('allArticles');
 
-
-Route::get('/masterCategory', [HomeController::class, 'showMaster'])->name('masterCategory');
 
  Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
  

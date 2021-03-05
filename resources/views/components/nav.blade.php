@@ -18,9 +18,22 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav "> 
-                <li class=" sezioni-nav">
-                   <a class="nav-link pr-5" href="{{route('searchPage')}}">Prodotti</a>
+                
+                <li class="dropdown  ">
+                    <a href="#" class="sezioni-nav nav-link pr-5" data-toggle="dropdown"> Prodotti</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Whole House Filter</a></li>
+                        <li><a href="#">Reverse Osmosis</a></li>
+                        <li><a href="#">Portable Filters</a></li>
+                        <li><a href="#">Portable Storage</a></li>
+                        <li><a href="#">Rain Water Storage</a></li>
+                    </ul>
                 </li>
+           
+                {{-- <li class=" sezioni-nav">
+                    <a class="nav-link pr-5" href="{{route('searchPage')}}">Prodotti</a>
+                 
+                </li>  --}}
 
                 <li class="sezioni-nav">
                     <a class="nav-link pr-5" href="">Funzionalità</a>
@@ -28,11 +41,13 @@
 
                  <li class="sezioni-nav">
                     <a class="nav-link pr-5" href="{{route('assistenza')}}">Assistenza</a>
+                    {{--  --}}
                    
                 </li>
 
                  <li class="nav-item">
-                     <form action="{{route('searchForm')}}" method="GET" class="form-inline general-search pt-2" >
+                     <form action=" {{route('searchForm')}}" method="GET" class="form-inline general-search pt-2" >
+                       
                         <input class="form-control mr-sm-2 no-wrap search-nav " name="q" type="text" placeholder="Search" aria-label="Search">
                         <button class="button-nav my-2 my-sm-0 no-wrap" type="submit">Search</button>
                       </form>

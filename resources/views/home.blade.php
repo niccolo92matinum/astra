@@ -95,35 +95,6 @@ description="Benvenuti nella homepage del sito"
 
   
 
-  .btn-nico{
-    background-color: var(--icon-second-color);
-    border-color:var(--main-color) ;
-    border-style: solid;
-    border-width: 2px;  
-   
-   
-   
-  }
-
-  .btn-nico:hover{
-    background-color: var(--main-color);
-    border-color:white ;
-    border-style: solid;
-    border-width: 2px;  
-    color: var(--icon-second-color);
-
-  }
-
-  .btn-nico a{
-    text-decoration: none;
-    color: var(--main-color);
-
-  }
-
-  .btn-nico a:hover{
-     color: white;
-  }
-  
   
   /* omino */
   
@@ -529,7 +500,7 @@ description="Benvenuti nella homepage del sito"
               <div class="col-12 col-md-8">
                 <h2 class="display-nic">I nostri prodotti</h2>
                 
-                <h4 class="display-nic2 ">Qualità e convenienza</h4>
+                <h4 class="display-nic2 ">Made in </h4>
                 <button type="button" class="btn btn-outline btn-nico">Vai ai prodotti</button>
                
                 
@@ -546,7 +517,7 @@ description="Benvenuti nella homepage del sito"
               <div class="col-12 col-md-8">
                 <h2 class="display-nic">Cosa puoi trovare</h2>
             
-                <h4 class="display-nic2 ">Illustrazioni nell'impiego</h4>
+                <h4 class="display-nic2 ">Consulenza impiantistica</h4>
                 <button type="button" class="btn btn-outline btn-nico"> Vai ai prodotti</i></button>
               </div>
             </div>
@@ -585,11 +556,11 @@ description="Benvenuti nella homepage del sito"
 <section class="">
  
       <h1 class="text-center title-home">TV , Satellite e Terrestre</h1>
-      <hr>
-    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, totam? Accusamus corrupti eius a ea rem qui voluptas consequatur impedit soluta, commodi maxime sunt eos non animi amet tempora. Cum.<a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
+      <hr class="hrr">
+    <p class="lead text-center">....  . . . .  con i migliori prodotti, da oltre 20 anni  impegnati sui sistemi atti alla <strong>ricezione televisiva</strong> terrestre e satellite</p>
  
 </section>
-<hr>
+<hr class="hrr">
 
 <div class="container-fluid back-gray">
   <div class="row ">
@@ -598,14 +569,14 @@ description="Benvenuti nella homepage del sito"
     </div>
   
     <div class="row  card-home  ">
-      @foreach ($categories as $category)
-      <div class="col-12 col-md-3  col-sm-6 " >
+      @foreach ($mastercategories as $mastercategory)
+      <div class="col-12 col-md-3 col-sm-6 " >
         <div class="card-prod   ">
           
-          <img src="{{Storage::url($category->img)}}" >
+          <img src="{{Storage::url($mastercategory->img)}}" >
           <div class="con-text">
-            <h2>{{$category->name}}</h2>
-            <a class="link-card" href="{{route('subCategory', $category)}}">  <button>VAI</button></a>
+            <h2>{{$mastercategory->name}}</h2>
+            <a class="link-card" href="{{route('masterCategory', $mastercategory)}}">  <button>VAI</button></a>
             {{-- --}}
           </div>
         </div>
@@ -633,6 +604,7 @@ description="Benvenuti nella homepage del sito"
       <h2 class="text-center title-home py-4 px-4 " >Nella <strong>SeachPage</strong>  potrai cercare i tuoi <strong> prodotti</strong>  con semplicità</h2>
     <div class="but-searh">
       <button type="button" class="btn btn-outline btn-nico "> <a href="{{route('searchPage')}}">SearchPage</a> </button>
+     
 
     </div>
       

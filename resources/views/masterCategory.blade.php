@@ -14,8 +14,8 @@ description="Benvenuti nel blog del sito"
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
                
-                    {{-- <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> {{$name}} </p>
-                    <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p> --}}
+                    <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> {{$name}} </p>
+                    <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p>
                
                
                 
@@ -39,20 +39,20 @@ description="Benvenuti nel blog del sito"
         
         <div class="row card-home px-5 ">
             
-            {{-- @foreach ($subcats as $subcat )
+            @foreach ($categories as $category )
             
             <div class="col-12 col-md-3 col-sm-6 ">
                 <div class="card-prod">
                     
-                    <img src="{{Storage::url($subcat->img)}}" >
+                    <img src="{{Storage::url($category->img)}}" >
                     <div class="con-text">
-                        <h2>{{$subcat->name}}</h2>
-                        <a class="link-card" href="{{route('allArticles', $subcat)}}">  <button>See more</button></a>
+                        <h2>{{$category->name}}</h2>
+                        <a class="link-card" href="{{route('subCategory', $category)}}">  <button>See more</button></a>
                         
                     </div>
                 </div> 
             </div>
-            @endforeach                       --}}
+            @endforeach                      
             
             
         </div>

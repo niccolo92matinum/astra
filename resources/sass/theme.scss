@@ -213,7 +213,7 @@ color: var(--icon-second-color);
 
 .card-prod {
   position: relative;
-  // margin: 5vh auto;
+  margin: 5vh auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,6 +253,7 @@ color: var(--icon-second-color);
 .card-prod .con-text {
   position: absolute;
   z-index: 30;
+  text-align:center;
   bottom: 0;
   width: 100%;
   color: #fff;
@@ -407,7 +408,7 @@ margin-top:150px;
   color:var(--icon-second-color);
 }
 
-hr{
+.hrr{
    
   border-style: solid;
   border-color: var(--background-color);
@@ -418,5 +419,36 @@ hr{
 
 .mar-100{
   margin-top:100px;
+}
+
+// bottone search nella home
+
+.btn-nico{
+  background-color: var(--icon-second-color);
+  border-color:var(--main-color) ;
+  border-style: solid;
+  border-width: 2px;  
+ 
+ 
+ 
+}
+
+.btn-nico:hover{
+  background-color: var(--main-color);
+  border-color:white ;
+  border-style: solid;
+  border-width: 2px;  
+  color: var(--icon-second-color);
+
+}
+
+.btn-nico a{
+  text-decoration: none;
+  color: var(--main-color);
+
+}
+
+.btn-nico a:hover{
+   color: white;
 }
 
