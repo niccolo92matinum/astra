@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Textarea;
+use Acme\StripeInspector\StripeInspector;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Category extends Resource
@@ -58,7 +60,7 @@ class Category extends Resource
             
             Image::make(__('Immagine'), 'img')
                 ->disk('public')
-                ->path('/categorie'),
+                ->path('/categorie'),    
         ];
     }
 
@@ -102,7 +104,7 @@ class Category extends Resource
      * @return array
      */
     public function actions(Request $request)
-    {
+    {    
         return [];
     }
 }

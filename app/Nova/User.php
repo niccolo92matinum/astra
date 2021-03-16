@@ -72,7 +72,7 @@ class User extends Resource
                    ->sortable()
                    ->canSee(function ($request){
                        return $request->user()->isAdmin();
-                   }),
+                   }) ,
 
             Password::make(__('Password'),'password')
                 ->onlyOnForms()

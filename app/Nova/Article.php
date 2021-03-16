@@ -64,6 +64,9 @@ class Article extends Resource
     public function fields(Request $request)
     {
         return [
+
+
+            
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make(__('Titolo'),'title')
@@ -115,6 +118,8 @@ class Article extends Resource
                     ->hideFromIndex(),
 
             Boolean::make(__('Pubblicato'), 'published'),
+
+            
         ];
     }
 

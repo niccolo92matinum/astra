@@ -95,4 +95,6 @@ public function mastercategory()
    return $this->BelongsTo(Mastercategory::class);
 }
 
+
+
 }
