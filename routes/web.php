@@ -40,6 +40,9 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
 
  Route::post('/mail/send',[HomeController::class, 'mailsend'])->name('email.send');
 
+
+ Route::get('/showSchema',[HomeController::class, 'schema'])->name('showSchema');
+
 Auth::routes();
 
 

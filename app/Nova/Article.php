@@ -98,8 +98,10 @@ class Article extends Resource
 
             Images::make('Main image', 'gallery') 
                 ->enableExistingMedia()    
-                ->conversionOnIndexView('thumb') 
-                ->rules('required'), 
+                ->conversionOnIndexView('thumb'),
+                // ->rules('required'), 
+                
+                
             
 
             DateTime::make(__('Data'), 'created_at')

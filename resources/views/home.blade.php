@@ -557,7 +557,7 @@ description="Benvenuti nella homepage del sito"
  
       <h1 class="text-center title-home">TV , Satellite e Terrestre</h1>
       <hr class="hrr">
-    <p class="lead text-center">....  . . . .  con i migliori prodotti, da oltre 20 anni  impegnati sui sistemi atti alla <strong>ricezione televisiva</strong> terrestre e satellite</p>
+    <p class="lead text-center"> con i migliori prodotti, . . . . da oltre 20 anni  impegnati sui sistemi atti alla <strong>ricezione televisiva</strong> terrestre e satellite</p>
  
 </section>
 <hr class="hrr">
@@ -582,7 +582,7 @@ description="Benvenuti nella homepage del sito"
         </div>
         
       </div>
-      
+    
       
       @endforeach
       
@@ -616,6 +616,9 @@ description="Benvenuti nella homepage del sito"
 
 
 
+
+  
+
 @push('scripts')
 <script>
   var walking = new TimelineMax({repeat:-1})
@@ -642,3 +645,7 @@ description="Benvenuti nella homepage del sito"
 @endpush
 
 </x-layouts.app>
+
+
+
+

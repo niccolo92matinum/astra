@@ -49,6 +49,7 @@ public function searchform(Request $request)
 {
   $q = $request->input('q');
   $articles = Article::search($q)->get();
+  
 
   return view('resultSearching', compact('q', 'articles'));
 }

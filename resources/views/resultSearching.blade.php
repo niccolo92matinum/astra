@@ -31,8 +31,8 @@
                     
                     <img src="{{Storage::url($article->img)}}" >
                     <div class="con-text">
-                      <h2>{{$article->name}}</h2>
-                      <a class="link-card" href="{{route('subCategory', $article)}}">  <button>VAI</button></a>
+                      <h2>{{$article->title}}</h2>
+                      <a class="link-card" href="{{route('show', $article->id)}}">  <button>VAI</button></a>
                       {{-- --}}
                     </div>
                   </div>

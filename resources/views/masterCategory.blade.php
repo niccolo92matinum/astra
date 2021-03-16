@@ -14,7 +14,7 @@ description="Benvenuti nel blog del sito"
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
                
-                    <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> {{$name}} </p>
+                    <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> {{$name1}} </p>
                     <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p>
                
                

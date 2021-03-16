@@ -36,12 +36,12 @@ description="{{$article->getPreview()}}">
             
         }
     }
-
+    
     .img-show{
         border-color:#b0b0b0;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 20px; 
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 20px; 
     }
     
     .tab{
@@ -57,7 +57,7 @@ description="{{$article->getPreview()}}">
         
         
     }
-
+    
     .ppp{
         color: var(--main-color);
     }
@@ -65,14 +65,14 @@ description="{{$article->getPreview()}}">
     .gray{
         background-color: var(--background-color);
     }
-
+    
     .sottolinea{
         text-decoration: underline  solid  ;
         width: 250px;
         float:left;
         background-color: black;
     }
-
+    
     .sottolinea2{
         text-decoration: underline  solid  ;
         background-color: black;
@@ -88,9 +88,18 @@ description="{{$article->getPreview()}}">
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
                 
+                @if ($nameMaster->name == $nameCate->name )
+                
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home / </a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} /</a> {{$article->title}} </p>
+                
+                <p class="second-nav-word  d-inline-block float-right "> <a href="javascript:history.back()" >Indietro</a> </p>  
+                @else
+                
                 <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home / </a>  <a href="{{route('masterCategory',$name3)}}"> {{$nameMaster->name}} /</a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} /</a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} /</a> {{$article->title}} </p>
                 
-                <p class="second-nav-word  d-inline-block float-right "> <a href="javascript:history.back()" >Indietro</a> </p>
+                <p class="second-nav-word  d-inline-block float-right "> <a href="javascript:history.back()" >Indietro</a> </p>  
+                @endif
+                
             </div>
         </div>
     </div>
@@ -98,9 +107,9 @@ description="{{$article->getPreview()}}">
 
 <body class="">
     <div class="container-fluid containerShow px-5 py-5 gray ">
-    
-    
-    
+        
+        
+        
         <div class="row py-5">
             
             <center class="col-12 col-md-6  ">
@@ -114,10 +123,48 @@ description="{{$article->getPreview()}}">
                 </div>
                 <div class="text-left pl-5 ppp ">
                     <h1>{!!$article->description!!}</h1>
-                </div>
+                    
+                    {{-- <button class="btn btn-primary"><a href="{{route('showSchema')}}">Schema utilizzo</a></button> --}}
+                    
+                    {{--  --}}
+                    <!-- Trigger the modal with a button -->
+                
+              
+<!-- Button trigger modal -->
+
+    
+
+{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+            <p>Some text in the modal.</p>
+            <img src="{{$article->getFirstMediaUrl("gallery", "thumb") }} " alt="" class="img-fluid">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      
+        </div>
+      </div>
+    </div>
+  </div> --}}
+ 
             </div>
         </div>
         
+
+
         <div class="row py-5">
             
             
@@ -150,20 +197,20 @@ description="{{$article->getPreview()}}">
         </div>
         
         <div class="row card-home">
-                @foreach ($relatedArticles as $relatedArticle)
-                <div class="col-12 col-md-3  col-sm-6 " class="mediaCard">
-                    <div class="card-prod">
+            @foreach ($relatedArticles as $relatedArticle)
+            <div class="col-12 col-md-3  col-sm-6 " class="mediaCard">
+                <div class="card-prod">
+                    
+                    <img src="{{Storage::url($relatedArticle->img)}}" >
+                    <div class="con-text">
+                        <h2>{{$relatedArticle->title}}</h2>
+                        <a class="link-card" href="{{route('show', $relatedArticle)}}"><button>VAI</button></a>
                         
-                        <img src="{{Storage::url($relatedArticle->img)}}" >
-                        <div class="con-text">
-                            <h2>{{$relatedArticle->title}}</h2>
-                            <a class="link-card" href="{{route('show', $relatedArticle)}}"><button>VAI</button></a>
-                           
-                        </div>
-                    </div>  
-                </div>
-                @endforeach
-    
+                    </div>
+                </div>  
+            </div>
+            @endforeach
+            
         </div>
     </div>
 </body>
@@ -171,6 +218,15 @@ description="{{$article->getPreview()}}">
 
 
 
+@push('scripts')
 
+<script>
+    
+    $('#modal-dialog').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
+
+@endpush
 
 </x-layouts.app>

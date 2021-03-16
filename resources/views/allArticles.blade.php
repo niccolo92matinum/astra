@@ -13,10 +13,18 @@ description="Benvenuti nel blog del sito"
     <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
-               {{-- ,{{route('subCategory', $nameSubcate)}} $nameMaster)}}  {{$name3}}  {{$name2}}   {{$name1}} --}}
-                    <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> <a href="{{route('masterCategory', $name3)}}">{{$nameMaster->name}} /</a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} /</a>  {{$nameSubcate->name}}   </p>
+
+           @if ($nameMaster->name == $nameCate->name )
+           <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a>   {{$nameSubcate->name}}  </p>
                     
-                     <p class="second-nav-word float-right "> <a href="javascript:history.back()" >Indietro</a> </p>
+           <p class="second-nav-word float-right "> <a href="javascript:history.back()" >Indietro</a> </p> 
+           @else
+           <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home /</a> <a href="{{route('masterCategory', $name3)}}">{{$nameMaster->name}} /</a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} /</a>  {{$nameSubcate->name}}  </p>
+                    
+           <p class="second-nav-word float-right "> <a href="javascript:history.back()" >Indietro</a> </p> 
+           @endif
+            
+                    
             </div>
         </div>
     </div>
