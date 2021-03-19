@@ -64,8 +64,11 @@ class Article extends Model implements HasMedia
 
      public function registerMediaCollections(): void
 {
-    $this->addMediaCollection('gallery')
-         ->useFallbackUrl('/img/immagine.jpg');    
+    $this->addMediaCollection('gallery');
+
+   
+    
+        //  ->useFallbackUrl('/img/immagine.jpg');    
 
 }
 
@@ -73,11 +76,17 @@ public function registerMediaConversions(Media $media = null): void
 {
     $this->addMediaConversion('thumb')
         //   
-          ->crop(Manipulations::CROP_CENTER, 720, 405)
+          ->crop(Manipulations::CROP_CENTER, 0, 1000)
         //   ->height(232)
           ->sharpen(8)
           ->performOncollections('gallery');
-}
+
+      
+}      
+
+
+
+
 
 
 public function category()

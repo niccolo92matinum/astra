@@ -9,7 +9,19 @@ description="Benvenuti nel blog del sito"
 
 </style>
 @endpush
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<nav>
     <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
@@ -29,7 +41,7 @@ description="Benvenuti nel blog del sito"
         </div>
     </div>
     
-</head>
+</nav>
 
 <body>
     

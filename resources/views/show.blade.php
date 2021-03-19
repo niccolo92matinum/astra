@@ -80,6 +80,10 @@ description="{{$article->getPreview()}}">
         align-items: center;
     }
     
+    .modal-img {
+        height: ;:100%;
+    }
+    
 </style>
 
 @endpush
@@ -124,109 +128,124 @@ description="{{$article->getPreview()}}">
                 <div class="text-left pl-5 ppp ">
                     <h1>{!!$article->description!!}</h1>
                     
-                    {{-- <button class="btn btn-primary"><a href="{{route('showSchema')}}">Schema utilizzo</a></button> --}}
-                    
-                    {{--  --}}
                     <!-- Trigger the modal with a button -->
+                    
+                    
+                    <!-- Button trigger modal -->
+                    
+                    @if (empty($article->getFirstMediaUrl("gallery", "thumb")))
+                    
+                    @else()
+                    
+                    <button type="button" class="btn btn-outline btn-nico mt-4" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+                    
+                    @if (empty($article->getFirstMediaPath("pdf")))
+                    
+                    @else
+                    
+                    <a class="link-card" href="{{route('download', $article)}}"> <button type="button" class="btn btn-outline btn-nico mt-4" >Scarica il pdf</button></a>
+                    @endif
+                    
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable  modal-lg  ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body    ">
+                                    
+                                    <img src="{{$article->getFirstMediaUrl("gallery", "thumb") }} " alt="" class="img-fluid modal-img" >
+                                    @if (empty($article->getMedia("gallery")[1]))
+                                    
+                                    @else
+                                    <img src="{{$article->getMedia("gallery")[1]->getUrl("thumb") }} " alt="" class="img-fluid modal-img" >
+                                    @endif
+                                    
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    @endif
+                </div>
+            </div>
+            
+            
+            
+            <div class="row py-5">
                 
-              
-<!-- Button trigger modal -->
-
-    
-
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body ">
-            <p>Some text in the modal.</p>
-            <img src="{{$article->getFirstMediaUrl("gallery", "thumb") }} " alt="" class="img-fluid">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
-        </div>
-      </div>
-    </div>
-  </div> --}}
- 
-            </div>
-        </div>
-        
-
-
-        <div class="row py-5">
-            
-            
-            <div class="col-12  pl-5 pr-5">
-                <div class="title-show text-center ppp">
-                    
-                    <h1>Descrizione<i class="fas fa-wrench "></i></h1>
-                    <hr class="sottolinea2">
-                </div>
-                <div class="text-center  ppp">
-                    <p>{!!$article->property!!}</p>
-                    
-                </div>
-            </div>
-            
-            
-        </div>
-        
-        
-    </div>
-    
-    
-    <hr class="hrr">
-    <div class="container-fluid back-gray pt-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class=" main-scritte" >Articoli correlati </h2>
-            </div>
-            
-        </div>
-        
-        <div class="row card-home">
-            @foreach ($relatedArticles as $relatedArticle)
-            <div class="col-12 col-md-3  col-sm-6 " class="mediaCard">
-                <div class="card-prod">
-                    
-                    <img src="{{Storage::url($relatedArticle->img)}}" >
-                    <div class="con-text">
-                        <h2>{{$relatedArticle->title}}</h2>
-                        <a class="link-card" href="{{route('show', $relatedArticle)}}"><button>VAI</button></a>
+                
+                <div class="col-12  pl-5 pr-5">
+                    <div class="title-show text-center ppp">
+                        
+                        <h1>Descrizione<i class="fas fa-wrench pt-5 "></i></h1>
+                        <hr class="sottolinea2">
+                    </div>
+                    <div class="text-center  ppp">
+                        <p>{!!$article->property!!}</p>
+                        
                         
                     </div>
-                </div>  
+                </div>
+                
+                
             </div>
-            @endforeach
+            
             
         </div>
-    </div>
-</body>
-
-
-
-
-@push('scripts')
-
-<script>
+        
+        
+        <hr class="hrr">
+        <div class="container-fluid back-gray pt-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class=" main-scritte" >Articoli correlati </h2>
+                </div>
+                
+            </div>
+            
+            <div class="row card-home">
+                @foreach ($relatedArticles as $relatedArticle)
+                <div class="col-12 col-md-3  col-sm-6 " class="mediaCard">
+                    <div class="card-prod">
+                        
+                        <img src="{{Storage::url($relatedArticle->img)}}" >
+                        <div class="con-text">
+                            <h2>{{$relatedArticle->title}}</h2>
+                            <a class="link-card" href="{{route('show', $relatedArticle)}}"><button>VAI</button></a>
+                            
+                        </div>
+                    </div>  
+                </div>
+                @endforeach
+                
+            </div>
+        </div>
+    </body>
     
-    $('#modal-dialog').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
-</script>
-
-@endpush
-
-</x-layouts.app>
+    
+    
+    
+    @push('scripts')
+    
+    <script>
+        
+        // $('#modal-dialog').on('shown.bs.modal', function () {
+            //     $('#myInput').trigger('focus')
+            // })
+        </script>
+        
+        @endpush
+        
+    </x-layouts.app>

@@ -3,7 +3,7 @@
   <style>
       .p{
         justify-content:center;
-text-align: center;
+          text-align: center;
       }
 
   </style>

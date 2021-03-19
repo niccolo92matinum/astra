@@ -20,9 +20,13 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+
+
 
 
 class Article extends Resource
@@ -32,6 +36,8 @@ class Article extends Resource
      *
      * @var string
      */
+
+
     public static $model = \App\Models\Article::class;
 
     public static $group = 'Contenuti';
@@ -77,6 +83,8 @@ class Article extends Resource
                 BelongsTo::make('Subategoria', 'subcategory', Subcategory::class),
                 
                 BelongsTo::make('Mastercategoria', 'mastercategory', Mastercategory::class),
+
+
            
             // Select::make(__('Categoria'),'category')
             //     ->options([
@@ -91,20 +99,26 @@ class Article extends Resource
             //         ])
             //         ->displayUsingLabels()
             //         ->rules('required'),
-                    
-           
-                
-
             Image::make(__('Immagine'), 'img')
                 ->disk('public')
                 ->path('/articoli'),
 
-            Images::make('Main image', 'gallery') 
+            Images::make('Schemi', 'gallery') 
                 ->enableExistingMedia()    
                 ->conversionOnIndexView('thumb'),
-                // ->rules('required'), 
-                
-                
+
+
+            Files::make('Multiple file', 'pdf')
+                   ->enableExistingMedia() 
+                   ->customPropertiesFields([
+                     Boolean::make('Active'),
+                     Markdown::make('Description'),
+
+                 ]),
+              
+               
+                // ->rules('required'),
+            
             
 
             DateTime::make(__('Data'), 'created_at')

@@ -5,10 +5,10 @@ document.addEventListener('scroll',()=>{
 
     if(window.pageYOffset > 100 ){
         navbar.classList.add('shadow')
-        secondNavbar.classList.add('shadow')
+        // secondNavbar.classList.add('shadow')
     }else{
         navbar.classList.remove('shadow')
-        secondNavbar.classList.remove('shadow')
+        // secondNavbar.classList.remove('shadow')
     }
 })
 

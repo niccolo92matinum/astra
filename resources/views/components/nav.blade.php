@@ -1,6 +1,6 @@
 
  
- <nav class="navbar navbar-expand-md navbar-light bg-white align-items-center shadow-sm fixed-top pippo">
+ <nav class="navbar  navbar-expand-md navbar-light bg-white align-items-center shadow-sm fixed-top pippo" id="navbar-nico">
     <div class="container-fluid " >
         <a class="navbar-brand " href="{{ url('/') }}" >
             

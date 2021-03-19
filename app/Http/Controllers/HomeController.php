@@ -356,6 +356,10 @@ class HomeController extends Controller
                 
                 $array_vuoto[]= $name1;
             } 
+
+           
+
+            
             
             
             if($article){
