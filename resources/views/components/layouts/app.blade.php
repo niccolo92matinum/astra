@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300;1,700&display=swap" rel="stylesheet">
     {{-- fontawesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     
@@ -31,7 +31,8 @@
     
 </head>
 <body>
-    <div id="app">
+
+    <div >
         <x-nav>
             
         </x-nav>
@@ -46,40 +47,15 @@
     
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> --}}
+
     
     {{-- omino spensierato malandrino --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     
     @stack('scripts')
     
-    <script>
-        // nabBar
-        // document.addEventListener('scroll',()=>{
-        //     let navbar = document.querySelector('#navbarNico')
-        //     if(window.pageYOffset > 100 ){
-        //         navbar.classList.add('shadow')
-        //     }else{
-        //         navbar.classList.remove('shadow')
-        //     }
-        // })
-        
-        // second-navbar
-        
-        document.addEventListener('scroll',()=>{
-            let secondNavbar = document.querySelector('#second-navbar')
-            if(window.pageYOffset > 100 ){
-                secondNavbar.classList.add('shadow')
-            }else{
-                secondNavbar.classList.remove('shadow')
-            }
-        })
-        
-        
-        
-    </script>
-    
+   
     
 </body>
 </html>

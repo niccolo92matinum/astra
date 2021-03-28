@@ -452,3 +452,39 @@ margin-top:150px;
    color: white;
 }
 
+
+
+
+ 
+@media (max-width: 400px) {
+  #second-navbar  {
+    display: none;
+   }
+}
+
+
+@media (max-width: 400px) {
+  .lead-normale {
+     font-size: 15px;
+     padding:15%; 
+    }
+ }
+
+ @media (max-width: 400px) {
+  .containerShow{
+     margin:0;
+     padding: 0;
+    }
+
+    .mobile-container{
+      position: relative;
+      margin-top: -50px;
+    }
+  }
+
+  @media (max-width: 600px) {
+
+    .indietro a{
+      display: none;
+    }
+  }

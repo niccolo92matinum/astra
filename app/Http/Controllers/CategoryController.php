@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use App\Models\Mastercategory;
 
 
 class CategoryController extends Controller
@@ -29,6 +30,11 @@ class CategoryController extends Controller
             $subcategory = $findNaSubCat->first()->name;
             $value['subcategory_id'] = $subcategory;
 
+            $findNaMastCat =  Mastercategory::where('id', $value['mastercategory_id'])->get('name');
+            $nameMastercategory = $findNaMastCat->first()->name;
+            $value['mastercategory_id'] = $nameMastercategory;
+            // $mastercategory = Article::where('mastercategory_id');
+            // $value['mastercategory_id'] = $mastercategory;
 
          
                 $vuoto[] = $value;            
@@ -43,6 +49,9 @@ public function search()
 {
     return view('searchPage');
 }
+
+
+
 // funzione che ci permette di ricercare i prodotti tramite parole chiave
 
 public function searchform(Request $request)

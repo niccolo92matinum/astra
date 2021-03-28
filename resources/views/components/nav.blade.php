@@ -1,6 +1,12 @@
 
+ @push('styles')
+<style>
  
- <nav class="navbar  navbar-expand-md navbar-light bg-white align-items-center shadow-sm fixed-top pippo" id="navbar-nico">
+
+</style>
+ @endpush
+ 
+ <nav id="navbar-nico" class="navbar  navbar-expand-md navbar-light bg-white align-items-center  fixed-top pippo  "  >
     <div class="container-fluid " >
         <a class="navbar-brand " href="{{ url('/') }}" >
             
@@ -9,6 +15,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
+       
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
@@ -17,31 +24,30 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav "> 
-                
-                <li class="dropdown  ">
-                    <a href="#" class="sezioni-nav nav-link pr-5" data-toggle="dropdown"> Prodotti</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Whole House Filter</a></li>
-                        <li><a href="#">Reverse Osmosis</a></li>
-                        <li><a href="#">Portable Filters</a></li>
-                        <li><a href="#">Portable Storage</a></li>
-                        <li><a href="#">Rain Water Storage</a></li>
-                    </ul>
-                </li>
-           
-                {{-- <li class=" sezioni-nav">
-                    <a class="nav-link pr-5" href="{{route('searchPage')}}">Prodotti</a>
-                 
-                </li>  --}}
+            <ul class="navbar-nav  text-center" > 
 
-                <li class="sezioni-nav">
+                <!-- Default dropleft button -->
+
+  
+  
+  
+                
+                {{-- <li class="dropdown"    >
+                    <a href="#" class="sezioni-nav nav-link pr-5" data-toggle="dropdown"> Prodotti</a>
+                    <ul class="dropdown-menu"  role="menu" id="masterCategory">
+                        
+                    </ul>
+                </li> --}}
+
+               
+
+                {{-- <li class="sezioni-nav">
                     <a class="nav-link pr-5" href="">Funzionalità</a>
-                 </li>
+                 </li> --}}
 
                  <li class="sezioni-nav">
                     <a class="nav-link pr-5" href="{{route('assistenza')}}">Assistenza</a>
-                    {{--  --}}
+                    {{-- qui c'è del javascript --}}
                    
                 </li>
 
@@ -63,11 +69,38 @@
     </div>
 </nav>
 
- 
 @push('scripts')
+<script>
 
 
+fetch('{{route('dataArticles')}}')
+    .then(response => response.json())
+    .then(data =>{
+               console.log(data);
+// con questa funzione io andrò a mostrare tutti i nomi delle categorie in maniera dinamica
+        function nomeCategorie(dataInput) {
+            let mastercategories = Array.from(new Set(data.map(el => el.mastercategory_id))).sort()
+           
+        // console.log(mastercategories);
+            let mastercategoryFilter = document.querySelector('#masterCategory')
+            
+      
+            
+            mastercategories.forEach(el => {
+              
+                let li = document.createElement('li')
+                li.innerHTML = 
+                `
+                <a href="">${el}</a>
+                `
+                mastercategoryFilter.appendChild(li)
+            })
+        }
+            nomeCategorie(data)
+    })
+</script>
 
+@endpush
 
  
 

@@ -64,6 +64,7 @@ description="{{$article->getPreview()}}">
     
     .gray{
         background-color: var(--background-color);
+        margin-top: 150px;
     }
     
     .sottolinea{
@@ -81,52 +82,83 @@ description="{{$article->getPreview()}}">
     }
     
     .modal-img {
-        height: ;:100%;
+        height:100%;
     }
     
+    .show-mobile h1{
+      font-size:25px;
+    }
+    .sottolinea, .icona-mobile{
+       display: none;
+    }
+
+    .show-mobile {
+      width: 100%;
+      
+     
+    }
+
+    
+ .media-library{
+   font-size:10px;
+   word-break:break-all;
+   margin-left:0;
+ }
+
+ 
 </style>
 
 @endpush
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show product page</title>
+</head>
+
+<nav >
     <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
                 
                 @if ($nameMaster->name == $nameCate->name )
                 
-                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home / </a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} /</a> {{$article->title}} </p>
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home <i class="fas fa-chevron-right"></i> </a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
                 
-                <p class="second-nav-word  d-inline-block float-right "> <a href="javascript:history.back()" >Indietro</a> </p>  
+                <p class="second-nav-word  d-inline-block float-right indietro "> <a href="javascript:history.back()" >Indietro</a> </p>  
                 @else
                 
-                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home / </a>  <a href="{{route('masterCategory',$name3)}}"> {{$nameMaster->name}} /</a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} /</a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} /</a> {{$article->title}} </p>
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home <i class="fas fa-chevron-right"></i></a>  <a href="{{route('masterCategory',$name3)}}"> {{$nameMaster->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
                 
-                <p class="second-nav-word  d-inline-block float-right "> <a href="javascript:history.back()" >Indietro</a> </p>  
+                <p class="second-nav-word  d-inline-block float-right indietro "> <a href="javascript:history.back()" >Indietro</a> </p>  
                 @endif
                 
             </div>
         </div>
     </div>
-</head>
+</nav>
 
-<body class="">
-    <div class="container-fluid containerShow px-5 py-5 gray ">
+<body  class="mobile-container">
+    <div class=" container-fluid gray   ">
         
         
         
-        <div class="row py-5">
+        <div class="row pt-4 pb-0  ">
             
-            <center class="col-12 col-md-6  ">
+            <div class="col-12 col-md-6 text-center ">
                 <img class="img-show my-5 " src="{{Storage::url($article->img)}}"  >
-            </center>
-            <div class="col-12 col-md-6  ">
+            </div>
+            <div class="col-12 col-md-6 show-mobile ">
                 <div class="title-show text-left  pl-5 pt-5">
                     <h1  class="">{{$article->title}}</h1>
                     <hr class="sottolinea ">
                     
                 </div>
-                <div class="text-left pl-5 ppp ">
-                    <h1>{!!$article->description!!}</h1>
+                <div class="text-left pl-5  ppp show-mobile">
+                    <div class="media-library" >{!!$article->description!!}</div>
                     
                     <!-- Trigger the modal with a button -->
                     
@@ -140,12 +172,14 @@ description="{{$article->getPreview()}}">
                     <button type="button" class="btn btn-outline btn-nico mt-4" data-toggle="modal" data-target="#exampleModal">
                         Launch demo modal
                     </button>
+                    @endif
+                    
                     
                     @if (empty($article->getFirstMediaPath("pdf")))
                     
                     @else
+                    <button type="button" class="btn btn-outline btn-nico mt-4" ><a class="link-card" href="{{route('download', $article)}}"> Scarica il pdf</a></button> 
                     
-                    <a class="link-card" href="{{route('download', $article)}}"> <button type="button" class="btn btn-outline btn-nico mt-4" >Scarica il pdf</button></a>
                     @endif
                     
                     
@@ -177,26 +211,28 @@ description="{{$article->getPreview()}}">
                             </div>
                         </div>
                     </div>  
-                    @endif
+                    
                 </div>
             </div>
             
-            
-            
-            <div class="row py-5">
+            <div class="container">
+                <div class="row py-3">
                 
                 
-                <div class="col-12  pl-5 pr-5">
-                    <div class="title-show text-center ppp">
-                        
-                        <h1>Descrizione<i class="fas fa-wrench pt-5 "></i></h1>
-                        <hr class="sottolinea2">
+                    <div class="col-12 pt-3 pl-5 pr-5">
+                        <div class="title-show text-center ppp">
+                            
+                            <h1>Descrizione<i class="fas fa-comment-medical pl-3 pt-5 icona-mobile"></i></h1>
+                            <hr class="sottolinea2">
+                        </div>
+                        <div class="text-center  ppp">
+                            <p>{!!$article->property!!}</p>
+                            
+                            
+                        </div>
                     </div>
-                    <div class="text-center  ppp">
-                        <p>{!!$article->property!!}</p>
-                        
-                        
-                    </div>
+                    
+                    
                 </div>
                 
                 
@@ -234,18 +270,7 @@ description="{{$article->getPreview()}}">
         </div>
     </body>
     
+    </html>
     
     
-    
-    @push('scripts')
-    
-    <script>
-        
-        // $('#modal-dialog').on('shown.bs.modal', function () {
-            //     $('#myInput').trigger('focus')
-            // })
-        </script>
-        
-        @endpush
-        
-    </x-layouts.app>
+</x-layouts.app>

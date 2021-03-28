@@ -65,16 +65,16 @@
         
     </style>
     @endpush
-
+    
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Search Page</title>
+        <title>Search page</title>
     </head>
-   
+    
     
     <nav>
         <div id="second-navbar" class="container-fluid second-nav-main align-items-center fixed-top">
@@ -212,7 +212,7 @@
                 div.classList.add('dioPorco')
                 div.innerHTML = 
                 `
-                 <input  class="inputSearch  " class="form-check-input" type="radio" name="categories" data-category_id="${el.toLowerCase()}"  value="option1" checked>
+                <input  class="inputSearch  " class="form-check-input" type="radio" name="categories" data-category_id="${el.toLowerCase()}"  value="option1" checked>
                 <label  class="labelSearch " class="form-check-label"  data-category_id="${el.toLowerCase()}" for="${el}">${el}</label>
                 
                 `
@@ -266,10 +266,10 @@
                 div.classList.add('dioPorco')
                 div.innerHTML = 
                 `
-               
+                
                 <input   class="inputSearch" class="form-check-input"  type="radio" name="subcategories" id="${el}" value="option2" checked>
                 <label  class="labelSearch" class="form-check-label"  data-subcategory_id="${el.toLowerCase()}" for="${el}">${el}</label>
-                  
+                
                 `
                 subCategoryFilterWrapper.appendChild(div)
             })
