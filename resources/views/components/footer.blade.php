@@ -8,7 +8,7 @@
 				</div>
 				<p class="fotInfo">ASTRA di Antonio Sacco è una piccola azienda impegnata da oltre venti anni nel settore dell'
 					impiantistica atta alla ricezione e distribuzione dei segnali televisivi DTT e SATELLITE. Con lo scopo di 
-					offrire in ogni occasione i migliori riscontri di efficienza. Sin dall' inizio ha optato per l'utilizzo 
+					offrire in ogni occasione i migliori riscontri di efficienza, sin dall' inizio ha optato per l'utilizzo 
 					dei migliori prodotti delle più autorevoli aziende del settore. I suoi principali fornitori sono EMMESSE e MICRO TEK.
 				</p>
 				{{-- <div class="footer-social-icon">
