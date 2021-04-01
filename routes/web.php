@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DownloadController;
@@ -45,8 +45,7 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
 //Rotta per fare il download del file in pdf
  Route::get('/download/{id}',[DownloadController::class, 'download'])->name('download');
 
- Route::get('/linkstorage', function () { Artisan::call('storage:link');
-});
+
 
 Auth::routes();
 
