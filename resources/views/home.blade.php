@@ -574,7 +574,7 @@ description="Benvenuti nella homepage del sito"
 
 
 
-<h1 class="text-center title-home">TV , Satellite e Terrestreoooooooo</h1>
+<h1 class="text-center title-home">TV , Satellite e Terrestre</h1>
 <hr class="hrr">
 <p class="lead text-center  best-product"> con i migliori prodotti, . . . . da oltre 20 anni  impegnati sui sistemi atti alla <strong>ricezione televisiva</strong> terrestre e satellite</p>
 
