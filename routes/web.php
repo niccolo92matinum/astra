@@ -18,7 +18,7 @@ use App\Http\Controllers\DownloadController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/linkstorage', function () { Artisan::call('storage:link') });
+Route::get('/linkstorage',  [HomeController::call, 'storage:link']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
