@@ -23,6 +23,25 @@
 
 }
 
+@media (max-width: 400px) {
+    .sfondo{
+     
+   height: 200px;
+   width: 200px;
+   margin-top:80px;
+    }
+
+    .lead{
+      font-size: 20px;
+     margin-top: 100px;
+   position: relative;
+   padding-left: 0;
+   padding-right:0;
+ width: 100%;
+     
+    }
+}
+
 
   </style>
   @endpush
