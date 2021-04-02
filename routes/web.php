@@ -18,7 +18,11 @@ use App\Http\Controllers\DownloadController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/linkstorage',  [HomeController::call, 'storage:link']);
+Route::get("/storage-link", function () {
+    $targetFolder = storage_path("app/public");
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    symlink($targetFolder, $linkFolder);
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
