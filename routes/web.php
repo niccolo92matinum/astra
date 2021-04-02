@@ -46,7 +46,7 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
 //Rotta per fare il download del file in pdf
  Route::get('/download/{id}',[DownloadController::class, 'download'])->name('download');
 
- Route::get('/linkstorage',  [Artisan::call('storage:link') ]);
+
 //  commento  A CAZZUM
 
 Auth::routes();
