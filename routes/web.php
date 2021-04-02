@@ -47,6 +47,7 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
  Route::get('/download/{id}',[DownloadController::class, 'download'])->name('download');
 
  Route::get('/linkstorage',  [Artisan::call('storage:link') ]);
+//  commento  A CAZZUM
 
 Auth::routes();
 
