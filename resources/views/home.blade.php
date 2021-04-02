@@ -516,7 +516,7 @@ description="Benvenuti nella homepage del sito"
         <div class="carousel-caption  d-md-block">
           <div class="row">
             <div class="col-12 col-md-8">
-              <h2 class="display-nic">I nostri prodottipppppp</h2>
+              <h2 class="display-nic">I nostri prodotti</h2>
               
               <h4 class="display-nic2 ">Dei migliori marchi </h4>
               {{-- <button type="button" class="btn btn-outline btn-nico">Vai ai prodotti</button> --}}
