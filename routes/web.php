@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
@@ -17,7 +18,7 @@ use App\Http\Controllers\DownloadController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/linkstorage', function () { Artisan::call('storage:link') });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
