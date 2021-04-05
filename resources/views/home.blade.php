@@ -518,7 +518,7 @@ description="Benvenuti nella homepage del sito"
             <div class="col-12 col-md-8">
               <h2 class="display-nic">I nostri prodotti</h2>
               
-              <h4 class="display-nic2 ">Dei migliori marchi </h4>
+              <h4 class="display-nic2 ">Antennistica</h4>
               {{-- <button type="button" class="btn btn-outline btn-nico">Vai ai prodotti</button> --}}
               
               
@@ -549,7 +549,7 @@ description="Benvenuti nella homepage del sito"
           <div class="row">
             <div class="col-12 col-md-8">
               <h2 class="display-nic">Informazione</h2>
-              <h4 class="display-nic2 ">Se hai problemi puoi contattarci quando vuoi.</h4>
+              <h4 class="display-nic2 ">Consulenza tecnica</h4>
               {{-- <button type="button" class="btn btn-outline btn-nico"> Vai ai prodotti</i></button> --}}
             </div>
           </div>

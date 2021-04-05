@@ -170,7 +170,7 @@ description="{{$article->getPreview()}}">
                     @else()
                     
                     <button type="button" class="btn btn-outline btn-nico mt-4" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
+                        Esempio utilizzo
                     </button>
                     @endif
                     
@@ -219,7 +219,7 @@ description="{{$article->getPreview()}}">
                 <div class="row py-3">
                 
                 
-                    <div class="col-12 pt-3 pl-5 pr-5">
+                    <div class="col-12 pt-3 pl-5 pr-5 pt-4">
                         <div class="title-show text-center ppp">
                             
                             <h1>Descrizione<i class="fas fa-comment-medical pl-3 pt-5 icona-mobile"></i></h1>

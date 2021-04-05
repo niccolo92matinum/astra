@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMastercategoriesTable extends Migration
+class AddSentenceToMastercategories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateMastercategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('mastercategories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('img');
-           
-            $table->timestamps();
+        Schema::table('mastercategories', function (Blueprint $table) {
+            $table->text('sentence');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateMastercategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mastercategories');
+        Schema::table('mastercategories', function (Blueprint $table) {
+            $table->dropColumn('sentence');
+        });
     }
 }

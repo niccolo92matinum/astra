@@ -116,8 +116,8 @@ class HomeController extends Controller
         
         
         
-        
-        
+        $sentence = Mastercategory::where('id', $mastercategoryId)->get('sentence')->first();
+               
         $artSubs = Article::where('subcategory_id', $id)->get();
         
         $nameMaster = Mastercategory::where('id', $article['mastercategory_id'])->get('name')->first();
@@ -131,7 +131,7 @@ class HomeController extends Controller
         if ($numCat == 1  &&  $numSub == 1){
             
             
-            return view('allArticles', compact('artSubs','id','nameCate','nameMaster','nameSubcate', 'name3','name2'));
+            return view('allArticles', compact('artSubs','id','nameCate','nameMaster','nameSubcate', 'name3','name2',  'sentence'));
             // return redirect()->route('subCategory', ['category']);
             //    $x = reset($subcats);
             
@@ -142,10 +142,10 @@ class HomeController extends Controller
             
             // return view('allArticles', compact('artSubs','id','nameCate','nameMaster','nameSubcate', 'name3','name2'));
         }elseif($numCat == 1){
-            return view ('subCategory', compact('subcats', 'name','name1', 'mastercategoryId'));
+            return view ('subCategory', compact('subcats', 'name','name1', 'mastercategoryId',  'sentence'));
             
         }else 
-        return view ('masterCategory', compact('categories', 'name1'));
+        return view ('masterCategory', compact('categories', 'name1', 'sentence'));
         
     }
     

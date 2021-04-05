@@ -47,7 +47,7 @@ description="Benvenuti nel blog del sito"
         <div class="row">
             <div class="col-12 pt-5">
                 <div class="text-center ">
-                    <p class="lead-normale">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit, optio aliquam a adipisci praesentium aliquid ad sit atque provident? Quod minus repudiandae dolores maxime sit. Soluta praesentium eos tempora.</p>
+                    <p class="lead-normale"></p>
                 </div>
             </div>
         </div>

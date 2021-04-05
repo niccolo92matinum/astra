@@ -7,6 +7,7 @@ use App\Nova\Mastercategory;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Mastercategory extends Resource
@@ -52,6 +53,10 @@ class Mastercategory extends Resource
             Image::make(__('Immagine'), 'img')
                 ->disk('public')
                 ->path('/mastercategorie'),
+
+             Textarea::make(__('Frase'),'sentence')
+                ->sortable()
+                ->rules('required'),
         ];
     }
 

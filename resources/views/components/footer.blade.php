@@ -6,8 +6,7 @@
 				<div class="footer-widget-heading fotTitile">
 					<h4>Chi Siamo</h4>
 				</div>
-				<p class="fotInfo">ASTRA di Antonio Sacco è una piccola azienda impegnata da oltre venti anni nel settore dell'
-					impiantistica atta alla ricezione e distribuzione dei segnali televisivi DTT e SATELLITE. Con lo scopo di 
+				<p class="fotInfo">ASTRA di Antonio Sacco è una piccola azienda impegnata da oltre venti anni nel settore dell'impiantistica atta alla ricezione e distribuzione dei segnali televisivi DTT e SATELLITE. Con lo scopo di 
 					offrire in ogni occasione i migliori riscontri di efficienza, sin dall' inizio ha optato per l'utilizzo 
 					dei migliori prodotti delle più autorevoli aziende del settore. I suoi principali fornitori sono EMMESSE e MICRO TEK.
 				</p>
@@ -28,7 +27,7 @@
                         <li><a href="#"><i class="fa fa-angle-right"></i> DTT</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i> Accessori</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i> Telecomandi</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Schemi di utilizzo</a></li>
+                        {{-- <li><a href="#"><i class="fa fa-angle-right"></i> Schemi di utilizzo</a></li> --}}
 	                  </ul>
 				</div>
 			<div class="col-md-4 p-3">
@@ -38,6 +37,7 @@
 				<ul class="linkediting">
                         <li><img src="/img/icona emmesse.png" alt="" class="img-fluid pt-3" style="width: 150px"></li>
 						<li><img src="/img/microtek.jpeg" alt="" class="img-fluid pt-3" style="width: 100px"></li>
+						<li><img src="/img/bravo.png" alt="" class="img-fluid pt-3" style="width: 150px"></li>
 	                  </ul>
 			</div>
 		</div>

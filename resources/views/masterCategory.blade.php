@@ -42,7 +42,8 @@ description="Benvenuti nel blog del sito"
                     <i class="fas fa-info fa-5x"></i>
                 </div>
                 <div class="text-center ">
-                    <p class="lead-normale">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit, optio aliquam a adipisci praesentium aliquid ad sit atque provident? Quod minus repudiandae dolores maxime sit. Soluta praesentium eos tempora.</p>
+                    <p class="lead-normale">{{$sentence->sentence}}</p>
+            
                 </div>
             </div>
         </div>
