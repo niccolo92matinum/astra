@@ -41,20 +41,23 @@ description="Benvenuti nel blog del sito"
 </nav>
 
 <body class="mobile-container">
-    
-    
+  
+   
     <div class="container-fluid  containerallArticles pl-5 pr-5">
+        @if ($nameMaster->name == $nameCate->name )
         <div class="row">
             <div class="col-12 pt-5">
                 <div class="text-center ">
-                    <p class="lead-normale"></p>
+                    <p class="lead-normale">{{$sentence->sentence}}</p>
                 </div>
             </div>
         </div>
         <div class="text-center icona">
             <i class="fas fa-sort-amount-up fa-5x"></i>
-        </div>
-        
+        </div>     
+        @else
+            
+        @endif
         <section class="row  card-home  ">
             
             @foreach ($artSubs as $artSub)
