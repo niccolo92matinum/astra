@@ -88,14 +88,7 @@
                 <button type="submit" class="btn  btn-outline btn-nico mail-btn">Invia Mail</button>
               </form>
             
-        </div>
-
-        
-
-        
-
-        
-        
+        </div>   
     </div>
 </body>
     

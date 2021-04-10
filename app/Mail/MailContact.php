@@ -24,7 +24,7 @@ class MailContact extends Mailable
     
     public function build()
     {
-        return $this->from('/')
+        return $this->from('astradvb@astra.it')
         ->view('mail.mailpage');
     }
 }

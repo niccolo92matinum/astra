@@ -383,32 +383,25 @@ class HomeController extends Controller
     
     public function mailsend(MailRequest $request) {  
         
-      
-        $a = new Mail();
         
-        $a->$messageee = $request->input('message');
-        $a->$name = $request->input('name');
-        $a->$email = $request->input('mail');
+        // $a = new Mail();
+        $messageee = $request->input('message');
+        $name = $request->input('name');
+        $email = $request->input('mail');
+       
         
-        $a->save();
-        
-        //     $data["name"] = $request->name;
-        // $data["email"] = $request->mail;
-        // $data["message"] = $request->message;
-        // $validator = Validator::make($request->all(), [
-            //     'name' => 'required|min:2',
-            //     'email' => 'required|max:255',
-            //     'message' => 'required|min:5',
-            // ]);
+        $a = compact('name', 'email', 'messageee');
+       
+
+        $result = new Mail($a);
+   
             
-            
-            
-            Mail::send('mail.send',["name"=>$name,"messageee"=>$messageee] , function($message)
+            Mail::send('mail.send',["name"=>$name,"messageee"=>$messageee] , function($message) 
             {
-                $message->from('astra@Sacco.it');
+                $message->from('astradvb@astra.it');
                 $message->to('ossido1999@libero.it');
             });
-            
+           
             
             return redirect('/')->with('status', "L'email è stata inviata con successo");
             
