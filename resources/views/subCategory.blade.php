@@ -6,12 +6,15 @@ description="Benvenuti nel blog del sito"
 @push('styles')
 <style>
     
-    
+    .fine{
+        margin-top: 170px;
+    }
 </style>
 @endpush
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,7 +47,7 @@ description="Benvenuti nel blog del sito"
         </div> --}}
         
         
-        <div class="row card-home px-5 ">
+        <div class="row card-home px-5 fine ">
             
             @foreach ($subcats as $subcat )
             
