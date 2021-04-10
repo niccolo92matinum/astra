@@ -383,7 +383,7 @@ class HomeController extends Controller
     
     public function mailsend(MailRequest $request) {  
         
-        dd($request);
+      
         $a = new Mail();
         
         $a->$messageee = $request->input('message');
