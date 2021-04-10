@@ -31,7 +31,7 @@ description="Benvenuti nel blog del sito"
 </nav>
 <body class="mobile-container">
     
-    <div class="container-fluid  container-sub    ">
+    {{-- <div class="container-fluid  container-sub    ">
         <div class="row">
             <div class="col-12 pt-5">
                 <div class="text-center icona">
@@ -41,7 +41,7 @@ description="Benvenuti nel blog del sito"
                     <p class="lead-normale">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit, optio aliquam a adipisci praesentium aliquid ad sit atque provident? Quod minus repudiandae dolores maxime sit. Soluta praesentium eos tempora.</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
         
         <div class="row card-home px-5 ">
