@@ -5,7 +5,7 @@ namespace App\Providers;
 use Laravel\Nova\Nova;
 
 
-use Astra\Dashboard\Dashboard;
+use Astrasacco\Dashboard\Dashboard;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 

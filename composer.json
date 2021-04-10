@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "astrasacco/dashbord": "*",
+        "astrasacco/dashboard": "*",
         "coderello/laravel-nova-lang": "^1.7",
         "ebess/advanced-nova-media-library": "^3.4",
         "fideloper/proxy": "^4.4",
@@ -42,7 +42,7 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/Dashbord"
+            "url": "./nova-components/Dashboard"
         }
     ],
     "config": {

@@ -1,5 +1,5 @@
 {
-    "name": "astrasacco/dashbord",
+    "name": "astrasacco/dashboard",
     "description": "A Laravel Nova card.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Astrasacco\\Dashbord\\": "src/"
+            "Astrasacco\\Dashboard\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Astrasacco\\Dashbord\\CardServiceProvider"
+                "Astrasacco\\Dashboard\\CardServiceProvider"
             ]
         }
     },

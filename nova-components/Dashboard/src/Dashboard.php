@@ -1,10 +1,10 @@
 <?php
 
-namespace Astrasacco\Dashbord;
+namespace Astrasacco\Dashboard;
 
 use Laravel\Nova\Card;
 
-class Dashbord extends Card
+class Dashboard extends Card
 {
     /**
      * The width of the card (1/3, 1/2, or full).
@@ -20,6 +20,6 @@ class Dashbord extends Card
      */
     public function component()
     {
-        return 'dashbord';
+        return 'dashboard';
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Astrasacco\Dashbord;
+namespace Astrasacco\Dashboard;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -21,8 +21,8 @@ class CardServiceProvider extends ServiceProvider
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('dashbord', __DIR__.'/../dist/js/card.js');
-            Nova::style('dashbord', __DIR__.'/../dist/css/card.css');
+            Nova::script('dashboard', __DIR__.'/../dist/js/card.js');
+            Nova::style('dashboard', __DIR__.'/../dist/css/card.css');
         });
     }
 
@@ -38,7 +38,7 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/dashbord')
+                ->prefix('nova-vendor/dashboard')
                 ->group(__DIR__.'/../routes/api.php');
     }
 

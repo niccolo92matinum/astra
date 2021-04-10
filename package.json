@@ -8,8 +8,8 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "build-dashbord": "cd nova-components/Dashbord && npm run dev",
-        "build-dashbord-prod": "cd nova-components/Dashbord && npm run prod"
+        "build-dashboard": "cd nova-components/Dashboard && npm run dev",
+        "build-dashboard-prod": "cd nova-components/Dashboard && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.21",
