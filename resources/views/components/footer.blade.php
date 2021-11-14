@@ -23,6 +23,9 @@
 					<h4>Categorie Principali</h4>
 				</div>
 				      <ul class="linkediting">
+{{-- @foreach ($mastercategories as $mastercategory)
+<li><a href="{{route('masterCategory', $mastercategory)}}"><i class="fa fa-angle-right"></i> {{$mastercategory->name}}}</a></li>
+@endforeach --}}
                         <li><a href="#"><i class="fa fa-angle-right"></i> Satellite</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i> DTT</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i> Accessori</a></li>

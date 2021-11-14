@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\View\View;
+
+
 use Illuminate\Support\Facades\Route;
-
-
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
@@ -47,6 +48,7 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
 //Rotta per fare il download del file in pdf
  Route::get('/download/{id}',[DownloadController::class, 'download'])->name('download');
 
+ 
 
 //  commento  A CAZZUM
 

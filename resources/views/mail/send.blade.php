@@ -12,9 +12,11 @@
             <div class="col-12">
                
                   
-                <h1 class="x">{{$name}}Ti ha inviato il messaggio  </h1>
+                <h1 class="x">{{$name}} ti ha inviato un messaggio  </h1>
+                <p>Mail di risposta {{$email}}</p>
                 <p> Caro Antonio.</p>
                 <p> {{$messageee}}</p>
+
             </div>
         </div>
     </div>

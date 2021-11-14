@@ -396,7 +396,7 @@ class HomeController extends Controller
         $result = new Mail($a);
    
             
-            Mail::send('mail.send',["name"=>$name,"messageee"=>$messageee] , function($message) 
+            Mail::send('mail.send',["name"=>$name,"messageee"=>$messageee, "email"=>$email] , function($message) 
             {
                 $message->from('astradvb@astra.it');
                 $message->to('ossido1999@libero.it');

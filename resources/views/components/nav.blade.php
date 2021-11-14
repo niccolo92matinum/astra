@@ -105,6 +105,22 @@ fetch('{{route('dataArticles')}}')
     })
 </script>
 
+
+<script>
+    
+//     document.addEventListener("scroll", ()=> {
+//         let navbar = document.querySelector('#navbar-nico')
+//         if (window.pageYOffset > 100 ){
+//             navbar.classList.add('d-none')
+//         } if(window.pageYOffset == 0){
+//            navbar.classList.remove('d-none')
+//         }
+//        console.log(window.pageYOffset)
+//    })
+
+//    console.log('ciao');
+
+</script>
 @endpush
 
  
