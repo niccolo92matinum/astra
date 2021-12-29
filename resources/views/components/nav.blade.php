@@ -26,30 +26,6 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav  text-center" > 
 
-                <!-- Default dropleft button -->
-
-  
-  
-  
-                
-                {{-- <li class="dropdown"    >
-                    <a href="#" class="sezioni-nav nav-link pr-5" data-toggle="dropdown"> Prodotti</a>
-                    <ul class="dropdown-menu"  role="menu" id="masterCategory">
-                        
-                    </ul>
-                </li> --}}
-
-               {{-- <li class="dropdown"    >
-                    <a href="#" class="sezioni-nav nav-link pr-5" data-toggle="dropdown"> Prodotti</a>
-                    <ul class="dropdown-menu"  role="menu" id="masterCategory">
-                        
-                    </ul>
-                </li> --}}
-
-                {{-- <li class="sezioni-nav">
-                    <a class="nav-link pr-5" href="">Funzionalità</a>
-                 </li> --}}
-
                  <li class="sezioni-nav">
                     <a class="nav-link pr-5" href="{{route('assistenza')}}">Assistenza</a>
                     {{-- qui c'è del javascript --}}
@@ -81,27 +57,27 @@
 fetch('{{route('dataArticles')}}')
     .then(response => response.json())
     .then(data =>{
-               console.log(data);
-// con questa funzione io andrò a mostrare tutti i nomi delle categorie in maniera dinamica
-        function nomeCategorie(dataInput) {
-            let mastercategories = Array.from(new Set(data.map(el => el.mastercategory_id))).sort()
+//               // console.log(data);
+// // con questa funzione io andrò a mostrare tutti i nomi delle categorie in maniera dinamica
+//         function nomeCategorie(dataInput) {
+//             let mastercategories = Array.from(new Set(data.map(el => el.mastercategory_id))).sort()
            
-        // console.log(mastercategories);
-            let mastercategoryFilter = document.querySelector('#masterCategory')
+//         // console.log(mastercategories);
+//             let mastercategoryFilter = document.querySelector('#masterCategory')
             
       
             
-            mastercategories.forEach(el => {
+//             mastercategories.forEach(el => {
               
-                let li = document.createElement('li')
-                li.innerHTML = 
-                `
-                <a href="">${el}</a>
-                `
-                mastercategoryFilter.appendChild(li)
-            })
-        }
-            nomeCategorie(data)
+//                 let li = document.createElement('li')
+//                 li.innerHTML = 
+//                 `
+//                 <a href="">${el}</a>
+//                 `
+//                 mastercategoryFilter.appendChild(li)
+//             })
+//         }
+//             nomeCategorie(data)
     })
 </script>
 

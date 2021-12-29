@@ -186,7 +186,7 @@
     fetch('{{route('dataArticles')}}')
     .then(response => response.json())
     .then(data =>{
-        console.log(data);
+      
         
         
         
@@ -253,6 +253,8 @@
             
         }
         function populateSubCategoriesFilter(dataInput) {
+
+          
             
             let subcategories = Array.from(new Set(data.map(el => el.subcategory_id))).sort()
             
@@ -267,7 +269,7 @@
                 div.innerHTML = 
                 `
                 
-                <input   class="inputSearch" class="form-check-input"  type="radio" name="subcategories" id="${el}" value="option2" checked>
+                <input   class="inputSearch" class="form-check-input"  type="radio" name="subcategories" data-subcategory_id="${el.toLowerCase()}" value="option2" checked>
                 <label  class="labelSearch" class="form-check-label"  data-subcategory_id="${el.toLowerCase()}" for="${el}">${el}</label>
                 
                 `
@@ -278,14 +280,15 @@
         }
         function filterBySubcategory(dataInput) {
             let clickable = document.querySelectorAll('[data-subcategory_id]')
-            
+           
             clickable.forEach(el => {
                 el.addEventListener('click', ()=>{
                     let choosenSubcategory = el.dataset.subcategory_id
+                   
                     
                     let filteredProducts = dataInput.filter(el => el.subcategory_id.
                     toLowerCase() == choosenSubcategory)
-                    
+                  
                     showProducts(filteredProducts)
                 })
             })
@@ -305,6 +308,8 @@
         }     
         function showProducts(dataInput) {
             let wrapperProducts = document.querySelector('#wrapperProducts')
+
+           
             wrapperProducts.innerHTML = " "
             dataInput.forEach(el => {
                 let col = document.createElement('div')
