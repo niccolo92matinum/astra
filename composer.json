@@ -16,7 +16,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^8.12",
+        "laravel/framework": "^8.75",
         "laravel/nova": "*",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
