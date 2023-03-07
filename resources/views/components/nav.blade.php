@@ -33,11 +33,7 @@
                 </li>
 
                  <li class="nav-item">
-                     <form action=" {{route('searchForm')}}" method="GET" class="form-inline general-search pt-2" >
-                       
-                        <input class="form-control mr-sm-2 no-wrap search-nav " name="q" type="text" placeholder="Search" aria-label="Search">
-                        <button class="button-nav my-2 my-sm-0 no-wrap" type="submit">Search</button>
-                      </form>
+                   
                      
                 </li>
                 

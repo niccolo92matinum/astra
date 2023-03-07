@@ -21,7 +21,7 @@ use App\Http\Controllers\DownloadController;
 */
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/masterCategory/{id}', [HomeController::class, 'showMaster'])->name('masterCategory');
 
@@ -33,7 +33,7 @@ Route::get('/subCategory/{category}', [HomeController::class, 'showsubcategory']
 
  Route::get('/show/{id}/{article_title?}', [HomeController::class, 'article'])->name('show');
  
- Route::get('/assistence',[HomeController::class, 'assistenza'])->name('assistenza');
+ Route::get('/assistence', [HomeController::class, 'assistenza'])->name('assistenza');
  
  Route::get('/dataArticles', [CategoryController::class, 'dataArticles'])->name('dataArticles');
 

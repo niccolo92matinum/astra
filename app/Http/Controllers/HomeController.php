@@ -41,7 +41,7 @@ class HomeController extends Controller
     {    
         $mastercategories = Mastercategory::all();
         
-        return view('home',compact('mastercategories'));
+        return view('index',compact('mastercategories'));
     }
     
     public function showMaster($id)

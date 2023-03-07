@@ -126,12 +126,12 @@ description="{{$article->getPreview()}}">
                 
                 @if ($nameMaster->name == $nameCate->name )
                 
-                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home <i class="fas fa-chevron-right"></i> </a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('index')}}">Home <i class="fas fa-chevron-right"></i> </a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
                 
                 <p class="second-nav-word  d-inline-block float-right indietro "> <a href="javascript:history.back()" >Indietro</a> </p>  
                 @else
                 
-                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home <i class="fas fa-chevron-right"></i></a>  <a href="{{route('masterCategory',$name3)}}"> {{$nameMaster->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('index')}}">Home <i class="fas fa-chevron-right"></i></a>  <a href="{{route('masterCategory',$name3)}}"> {{$nameMaster->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('subCategory',$name2)}}">{{$nameCate->name}} <i class="fas fa-chevron-right"></i></a>  <a href="{{route('allArticles',$name1)}}"> {{$nameSubcate->name}} <i class="fas fa-chevron-right"></i></a> {{$article->title}} </p>
                 
                 <p class="second-nav-word  d-inline-block float-right indietro "> <a href="javascript:history.back()" >Indietro</a> </p>  
                 @endif

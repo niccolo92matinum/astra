@@ -25,7 +25,7 @@ description="Benvenuti nel blog del sito"
         <div class="row px-4 py-4 second-nav mt-2">
             <div class="col-12 ">
                 
-                <p class="second-nav-word  d-inline-block "> <a href="{{route('home')}}">Home <i class="fas fa-chevron-right"></i></a> <a href="{{route('masterCategory',$mastercategoryId)}}"> {{$name1}} <i class="fas fa-chevron-right"></i></a> {{$name}} </p>
+                <p class="second-nav-word  d-inline-block "> <a href="{{route('index')}}">Home <i class="fas fa-chevron-right"></i></a> <a href="{{route('masterCategory',$mastercategoryId)}}"> {{$name1}} <i class="fas fa-chevron-right"></i></a> {{$name}} </p>
                 <p class="second-nav-word float-right "> <a href="javascript:history.back()">Indietro</a> </p>
                 
             </div>
